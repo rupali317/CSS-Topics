@@ -24,15 +24,19 @@
 }
 
 /*------------------------------- Basic Selectors -------------------------------*/
+/* Specificity = 0 */
 * {
   font-family: var(--font-family-group-1);
 }
+/* Specificity = 1 */
 p {
   color: var(--color-1);
 }
+/* Specificity = 10 */
 .highlight {
   background-color: var(--color-2);
 }
+/* Specificity = 100 */
 #unique {
   font-weight: var(--font-weight-bold);
 }
@@ -40,15 +44,22 @@ p {
 
 /*--------------------------------- Combinators ---------------------------------*/
 .parent p {
+  /* Selects all <p> that are descendants of .parent */
+  /* Specificity = 10 + 1 = 11*/
   color: var(--color-3);
 }
 .parent > span > p {
+  /* p is a direct child of span and span is a direct child of .parent*/
+  /* > = means parent-child relationship */
+  /* Specificity = 10 + 1 + 1 = 12 */
   font-style: italic;
 }
 div + p {
+  /* Specificity = 1 + 1 = 2*/
   color: var(--color-4);
 }
 div ~ p {
+  /* Specificity = 1 + 1 = 2*/
   text-decoration: underline;
 }
 /*-------------------------------------------------------------------------------*/
@@ -84,10 +95,10 @@ ul li:last-child {
   content: "“";
   color: var(--color-7);
 }
-/* .quote::before {
+.quote::before {
   content: "“";
-  color: var(--color-4);
-} */
+  color: var(--color-3);
+}
 .quote::after {
   content: "”";
   color: var(--color-7);
@@ -151,3 +162,4 @@ Would you like me to add more pseudo-element examples to your existing HTML?
    Why we aim for lower specificity. Explain the use case */
 
 /* RRC - Uncomment .quote::before with green color */
+/* RRC dangers of !importatnt */
