@@ -6,10 +6,55 @@
       name="description"
       content="A tutorial on css topics: selectors and specificity"
     />
-    <meta name="author" content="Rupali Roy Choudhury" />
+    <meta name="author" content="RRC" />
     <meta name="keywords" content="CSS topics, selectors, specificity" />
-    <title>Selectors and specificity</title>
+    <title>Selectors and Specificity</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
-  <body></body>
+  <body>
+    <h1>CSS Selectors and Specificity</h1>
+
+    <section>
+      <h2>Basic Selectors</h2>
+      <p>This is a paragraph inside a section.</p>
+      <p class="highlight">This paragraph has a class.</p>
+      <p id="unique">This paragraph has an ID.</p>
+    </section>
+
+    <section>
+      <h2>Combinators</h2>
+      <div class="parent">
+        <p>Descendant selector example.</p>
+        <span>
+          <p>Child selector example.</p>
+        </span>
+      </div>
+      <div>
+        <p>Adjacent sibling example.</p>
+      </div>
+      <p>General sibling example.</p>
+    </section>
+
+    <section>
+      <h2>Attribute Selectors</h2>
+      <input type="text" placeholder="Type here" />
+      <a href="#" title="CSS Link">CSS Link</a>
+    </section>
+
+    <section>
+      <h2>Pseudo-Classes</h2>
+      <button class="btn">Hover over me</button>
+      <ul>
+        <li>First child</li>
+        <li>Second child</li>
+        <li>Third child</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Pseudo-Elements</h2>
+      <p class="intro">This paragraph will use ::first-letter.</p>
+      <p class="quote">This will have ::before and ::after.</p>
+    </section>
+  </body>
 </html>
