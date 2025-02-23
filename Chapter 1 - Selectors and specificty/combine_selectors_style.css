@@ -57,20 +57,20 @@ div.father.mother {
 }
 
 .parent > p {
-  /* p is a direct child of an element with .parent class. The symbol > means parent-child relationship. Specificity = 10 + 1  = 11 */
+  /* <p> is a direct child of an element with .parent class. The symbol > means parent-child relationship. Specificity = 10 + 1  = 11 */
   font-style: italic;
 }
 /* Quiz: what will happen to the <p> inside the <span> and <label>? */
 
 .parent > span > p {
-  /* p is a direct child of span which is  direct child of an element with .parent class. Specificity = 10 + 1 + 1 = 12 */
+  /* <p> is a direct child of span which is  direct child of an element with .parent class. Specificity = 10 + 1 + 1 = 12 */
   color: var(--color-4);
 }
 /* Quiz: why is --color-4 applied on .parent > span > p and not .parent p --color-3?  */
 /* Quiz: what will happen to the <p> inside the <label>? */
 
 div + p {
-  /* only the first p element which is the immediate sibling of div element is selected. + is adjacent sibling. Specificity = 1 + 1 = 2 */
+  /* Only the first p element which is the immediate sibling of div element is selected. + is adjacent sibling. Specificity = 1 + 1 = 2 */
   color: var(--color-5);
 }
 /* Quiz: what do you think happens to <p>2nd Adjacent sibling example.</p>? */
