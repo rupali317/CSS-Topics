@@ -1,0 +1,61 @@
+:root {
+  /* Colors */
+  --color-1: blue;
+  --color-2: yellow;
+  --color-3: red;
+  --color-4: green;
+  --color-5: purple;
+  --color-6: orange;
+  --color-7: gray;
+  --color-8: black;
+
+  /* Font family */
+  --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+
+  /* Font size */
+  --font-size-1: 2em;
+  --font-size-2: 3em;
+  --font-size-4: 4em;
+
+  /* Font weight */
+  --font-weight-bold: bold;
+
+  /* Border width */
+  --border-width-1: 2px;
+}
+
+/*--------------------------------- Combinators ---------------------------------*/
+.parent p {
+  /* Selects all <p> that are descendants of .parent. Specificity = 10 + 1 = 11*/
+  color: var(--color-3);
+}
+
+/*.father.mother - why does child also get affected?*/
+.father.mother {
+  font-size: var(--font-size-2);
+}
+
+.father,
+.mother {
+  text-decoration: line-through;
+}
+
+/*.father .child*/
+.father .mother {
+  font-size: var(--font-size-4);
+}
+
+.parent > span > p {
+  /* p is a direct child of span and span is a direct child of .parent. > = means parent-child relationship. Specificity = 10 + 1 + 1 = 12 */
+  font-style: italic;
+}
+div + p {
+  /* only to the first immediate sibling. Specificity = 1 + 1 = 2*/
+  color: var(--color-4);
+}
+div ~ p {
+  /* Specificity = 1 + 1 = 2*/
+  text-decoration: underline;
+}
+/*-------------------------------------------------------------------------------*/

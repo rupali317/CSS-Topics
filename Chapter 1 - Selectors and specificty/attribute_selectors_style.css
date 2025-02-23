@@ -1,0 +1,36 @@
+:root {
+  /* Colors */
+  --color-1: blue;
+  --color-2: yellow;
+  --color-3: red;
+  --color-4: green;
+  --color-5: purple;
+  --color-6: orange;
+  --color-7: gray;
+  --color-8: black;
+
+  /* Font family */
+  --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+
+  /* Font size */
+  --font-size-1: 2em;
+  --font-size-2: 3em;
+  --font-size-4: 4em;
+
+  /* Font weight */
+  --font-weight-bold: bold;
+
+  /* Border width */
+  --border-width-1: 2px;
+}
+
+/*----------------------------- Attribute Selectors -----------------------------*/
+input[placeholder] {
+  border: var(--border-width-1) solid var(--color-8);
+}
+a[title="CSS Link"] {
+  color: var(--color-5);
+}
+/*RRC:Provide more examples*/
+/*-------------------------------------------------------------------------------*/

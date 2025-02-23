@@ -1,0 +1,114 @@
+:root {
+  /* Colors */
+  --color-1: blue;
+  --color-2: yellow;
+  --color-3: red;
+  --color-4: green;
+  --color-5: purple;
+  --color-6: orange;
+  --color-7: gray;
+  --color-8: black;
+
+  /* Font family */
+  --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+
+  /* Font size */
+  --font-size-1: 2em;
+  --font-size-2: 3em;
+  --font-size-4: 4em;
+
+  /* Font weight */
+  --font-weight-bold: bold;
+
+  /* Border width */
+  --border-width-1: 2px;
+}
+
+/*-------------------------------- Pseudo-Classes -------------------------------*/
+.btn:hover {
+  background-color: var(--color-6);
+}
+ul li:first-child {
+  font-weight: var(--font-weight-bold);
+}
+ul li:last-child {
+  font-style: italic;
+}
+/*-------------------------------------------------------------------------------*/
+
+/*------------------------------- Pseudo-Elements -------------------------------*/
+.intro::first-letter {
+  font-size: var(--font-size-1);
+  color: var(--color-3);
+}
+.quote::before {
+  content: "“";
+  color: var(--color-7);
+}
+.quote::before {
+  content: "“";
+  color: var(--color-3);
+}
+.quote::after {
+  content: "”";
+  color: var(--color-7);
+}
+/*-------------------------------------------------------------------------------*/
+
+/* RRC:Pseudo elements vs psuedo classes, use case,  */
+
+/* 
+  ### **What is a Pseudo-Element?**
+  A **pseudo-element** is a CSS feature that allows you to style specific parts of an element without adding extra HTML. They behave like real elements but don’t appear in the DOM.
+  
+  ### **Use Cases of Pseudo-Elements**
+  1. **Styling the First Letter or Line of Text**
+     ```css
+     p::first-letter {
+       font-size: 2em;
+       color: red;
+     }
+     ```
+     - Used for drop caps in articles.
+  
+  2. **Adding Decorative Content Before or After an Element**
+     ```css
+     .quote::before {
+       content: '“';
+     }
+     .quote::after {
+       content: '”';
+     }
+     ```
+     - Used to add quotation marks without modifying the HTML.
+  
+  3. **Styling Placeholder Text**
+     ```css
+     input::placeholder {
+       color: gray;
+     }
+     ```
+     - Used to style placeholder text in forms.
+  
+  4. **Creating Visual Effects Without Extra HTML**
+     ```css
+     .button::after {
+       content: ' →';
+     }
+     ```
+     - Used for buttons with icons/text without adding additional elements.
+  
+  ### **Why Not Just Make Them HTML Elements?**
+  1. **Cleaner HTML** – Avoids unnecessary `<span>` or `<div>` elements just for styling.  
+  2. **Lightweight Styling** – Reduces DOM complexity and improves performance.  
+  3. **Enhances Readability** – Keeps HTML focused on structure, while CSS handles visual elements.
+  
+  Would you like me to add more pseudo-element examples to your existing HTML?
+  */
+
+/* RRC - Specificity inline = 1000, id = 0100, class,attribute,pseudoclass = 0010, element,pseudoelements = 0001, universal selector=0000
+     Why we aim for lower specificity. Explain the use case */
+
+/* RRC - Uncomment .quote::before with green color */
+/* RRC dangers of !importatnt */
