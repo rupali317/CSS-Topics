@@ -31,17 +31,20 @@
 /*---------------------------------------------------------- COMBINATORS ----------------------------------------------------------------*/
 .parent p {
   /* Selects all <p> elements that are descendants of elements with .parent class. Specificity = 10 + 1 = 11 */
+  /* Use case: show .layout-swo-version2 .dashboard-card-footer */
   color: var(--color-3);
 }
 
 .father.mother {
   /* Selects all elements that has BOTH father and mother classes. Specificity = 20 */
+  /* Use case: show .fa-regular.fa-circle-check:before, .fa-solid.fa-circle-check:before */
   letter-spacing: var(--letter-spacing-1);
 }
 
 .father,
 .mother {
   /* Selects elements that has either father or mother or BOTH. Specificity of each class is 10. They will not add up to 20 */
+  /* Use case: .layout-swo-version2 .pagination-button, .layout-swo-version2 .datagrid-pagination-button  */
   text-decoration: line-through;
 }
 
@@ -58,6 +61,7 @@ div.father.mother {
 
 .parent > p {
   /* <p> is a direct child of an element with .parent class. The symbol > means parent-child relationship. Specificity = 10 + 1  = 11 */
+  /* Use case: show .custom-pagination-1 nav > div. Less expensive than descendant selector */
   font-style: italic;
 }
 /* Quiz: what will happen to the <p> inside the <span> and <label>? */
@@ -71,12 +75,14 @@ div.father.mother {
 
 div + p {
   /* Only the first p element which is the immediate sibling of div element is selected. + is adjacent sibling. Specificity = 1 + 1 = 2 */
+  /* Use case: .layout-swo-version2 .btn + .btn */
   color: var(--color-5);
 }
 /* Quiz: what do you think happens to <p>2nd Adjacent sibling example.</p>? */
 
 div ~ p {
   /* All p elements that are siblings will be selected. ~ is general sibling. Specificity = 1 + 1 = 2 */
+  /* Use case: .layout-swo-version2 .wj-cell.wj-header.checked-column-header ~ .wj-header */
   text-decoration: underline;
 }
 /* Quiz: what do you think happens to <p>2nd Adjacent sibling example.</p>? */
