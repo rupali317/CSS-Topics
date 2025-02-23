@@ -1,0 +1,121 @@
+:root {
+  /* Colors */
+  --color-1: rgb(102, 102, 204);
+  --color-2: rgb(226, 226, 175);
+  --color-3: rgb(240, 187, 187);
+  --color-4: rgb(154, 193, 154);
+  --color-5: rgb(184, 121, 184);
+  --color-6: rgb(155, 136, 100);
+  --color-7: rgb(168, 98, 98);
+  --color-8: rgb(51, 48, 48);
+
+  /* Font family */
+  --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+
+  /* Font size */
+  --font-size-1: 2em;
+  --font-size-2: 3em;
+  --font-size-4: 4em;
+
+  /* Font weight */
+  --font-weight-bold: bold;
+
+  /* Border width */
+  --border-width-1: 4px;
+}
+
+/*------------------------------- Basic Selectors -------------------------------*/
+/* Select all elements. Specificity = 0. Very generic */
+* {
+  font-family: var(--font-family-group-1);
+}
+/* Select all p element. Affects all p elements. Specificity = 1 */
+p {
+  color: var(--color-1);
+}
+/* Selects all elements that have a .highlight class. Classes have a specificity = 10 */
+.highlight {
+  background-color: var(--color-2);
+}
+/* Selects an element that have #unique id. Specificity = 100 */
+#unique {
+  font-weight: var(--font-weight-bold);
+}
+/*-------------------------------------------------------------------------------*/
+
+/*--------------------------------- Combinators ---------------------------------*/
+.parent p {
+  /* Selects all <p> that are descendants of .parent. Specificity = 10 + 1 = 11*/
+  color: var(--color-3);
+}
+
+/*.father.mother - why does child also get affected?*/
+.father.mother {
+  font-size: var(--font-size-2);
+}
+
+.father,
+.mother {
+  text-decoration: line-through;
+}
+
+/*.father .child*/
+.father .mother {
+  font-size: var(--font-size-4);
+}
+
+.parent > span > p {
+  /* p is a direct child of span and span is a direct child of .parent. > = means parent-child relationship. Specificity = 10 + 1 + 1 = 12 */
+  font-style: italic;
+}
+div + p {
+  /* only to the first immediate sibling. Specificity = 1 + 1 = 2*/
+  color: var(--color-4);
+}
+div ~ p {
+  /* Specificity = 1 + 1 = 2*/
+  text-decoration: underline;
+}
+/*-------------------------------------------------------------------------------*/
+
+/*----------------------------- Attribute Selectors -----------------------------*/
+input[placeholder] {
+  border: var(--border-width-1) solid var(--color-8);
+}
+a[title="CSS Link"] {
+  color: var(--color-5);
+}
+/*RRC:Provide more examples*/
+/*-------------------------------------------------------------------------------*/
+
+/*-------------------------------- Pseudo-Classes -------------------------------*/
+.btn:hover {
+  background-color: var(--color-6);
+}
+ul li:first-child {
+  font-weight: var(--font-weight-bold);
+}
+ul li:last-child {
+  font-style: italic;
+}
+/*-------------------------------------------------------------------------------*/
+
+/*------------------------------- Pseudo-Elements -------------------------------*/
+.intro::first-letter {
+  font-size: var(--font-size-1);
+  color: var(--color-3);
+}
+.quote::before {
+  content: "“";
+  color: var(--color-7);
+}
+.quote::before {
+  content: "“";
+  color: var(--color-3);
+}
+.quote::after {
+  content: "”";
+  color: var(--color-7);
+}
+/*-------------------------------------------------------------------------------*/
