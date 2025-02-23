@@ -15,6 +15,8 @@
 
   /* Font size */
   --font-size-1: 2em;
+  --font-size-2: 3em;
+  --font-size-4: 4em;
 
   /* Font weight */
   --font-weight-bold: bold;
@@ -24,19 +26,19 @@
 }
 
 /*------------------------------- Basic Selectors -------------------------------*/
-/* Specificity = 0 */
+/* Select all elements. Specificity = 0. Very generic */
 * {
   font-family: var(--font-family-group-1);
 }
-/* Specificity = 1 */
+/* Select all p element. Affects all p elements. Specificity = 1 */
 p {
   color: var(--color-1);
 }
-/* Specificity = 10 */
+/* Selects all elements that have a .highlight class. Classes have a specificity = 10 */
 .highlight {
   background-color: var(--color-2);
 }
-/* Specificity = 100 */
+/* Selects an element that have #unique id. Specificity = 100 */
 #unique {
   font-weight: var(--font-weight-bold);
 }
@@ -44,18 +46,31 @@ p {
 
 /*--------------------------------- Combinators ---------------------------------*/
 .parent p {
-  /* Selects all <p> that are descendants of .parent */
-  /* Specificity = 10 + 1 = 11*/
+  /* Selects all <p> that are descendants of .parent. Specificity = 10 + 1 = 11*/
   color: var(--color-3);
 }
+
+/*.father.mother - why does child also get affected?*/
+.father.mother {
+  font-size: var(--font-size-2);
+}
+
+.father,
+.mother {
+  text-decoration: line-through;
+}
+
+/*.father .child*/
+.father .mother {
+  font-size: var(--font-size-4);
+}
+
 .parent > span > p {
-  /* p is a direct child of span and span is a direct child of .parent*/
-  /* > = means parent-child relationship */
-  /* Specificity = 10 + 1 + 1 = 12 */
+  /* p is a direct child of span and span is a direct child of .parent. > = means parent-child relationship. Specificity = 10 + 1 + 1 = 12 */
   font-style: italic;
 }
 div + p {
-  /* Specificity = 1 + 1 = 2*/
+  /* only to the first immediate sibling. Specificity = 1 + 1 = 2*/
   color: var(--color-4);
 }
 div ~ p {
@@ -64,7 +79,7 @@ div ~ p {
 }
 /*-------------------------------------------------------------------------------*/
 
-/*----------------------------- Attribute Selectors ------------------------------*/
+/*----------------------------- Attribute Selectors -----------------------------*/
 input[placeholder] {
   border: var(--border-width-1) solid var(--color-8);
 }
