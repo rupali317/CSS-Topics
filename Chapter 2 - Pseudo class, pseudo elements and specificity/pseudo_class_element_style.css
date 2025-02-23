@@ -46,10 +46,10 @@ ul li:last-child {
   content: "“";
   color: var(--color-7);
 }
-.quote::before {
+/* .quote::before {
   content: "“";
   color: var(--color-3);
-}
+} */
 .quote::after {
   content: "”";
   color: var(--color-7);
@@ -106,3 +106,4 @@ ul li:last-child {
   
   Would you like me to add more pseudo-element examples to your existing HTML?
   */
+/* RRC - Uncomment .quote::before with green color */
