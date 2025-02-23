@@ -23,39 +23,59 @@
 
   /* Border width */
   --border-width-1: 2px;
+
+  /* Letter spacing */
+  --letter-spacing-1: 8px;
 }
 
 /*--------------------------------- Combinators ---------------------------------*/
 .parent p {
-  /* Selects all <p> that are descendants of .parent. Specificity = 10 + 1 = 11*/
+  /* Selects all <p> elements that are descendants of elements with .parent class. Specificity = 10 + 1 = 11 */
   color: var(--color-3);
 }
 
-/*.father.mother - why does child also get affected?*/
 .father.mother {
-  font-size: var(--font-size-2);
+  /* Selects all elements that has BOTH father and mother classes. Specificity = 20 */
+  letter-spacing: var(--letter-spacing-1);
 }
 
 .father,
 .mother {
+  /* Selects elements that has either father or mother or BOTH. Specificity of each class is 10. They will not add up to 20 */
   text-decoration: line-through;
 }
 
-/*.father .child*/
-.father .mother {
-  font-size: var(--font-size-4);
+div.father.mother {
+  /* Selects an element that has BOTH father and mother only in a div element. Specificity = 21 */
+  font-size: var(--font-size-2);
 }
 
-.parent > span > p {
-  /* p is a direct child of span and span is a direct child of .parent. > = means parent-child relationship. Specificity = 10 + 1 + 1 = 12 */
+/* Quiz: What do you think will happen? */
+/* Quiz: What do you think is the specificity of .father .mother? */
+.father .mother {
+  text-decoration: underline;
+}
+
+.parent > p {
+  /* p is a direct child of an element with .parent class. The symbol > means parent-child relationship. Specificity = 10 + 1  = 11 */
   font-style: italic;
 }
-div + p {
-  /* only to the first immediate sibling. Specificity = 1 + 1 = 2*/
+/* Quiz: what will happen to the <p> inside the <span> and <label>? */
+
+.parent > span > p {
+  /* p is a direct child of span which is  direct child of an element with .parent class. Specificity = 10 + 1 + 1 = 12 */
   color: var(--color-4);
 }
+/* Quiz: why is --color-4 applied on .parent > span > p and not .parent p --color-3?  */
+/* Quiz: what will happen to the <p> inside the <label>? */
+
+div + p {
+  /* only to the first immediate sibling. Specificity = 1 + 1 = 2 */
+  color: var(--color-4);
+}
+
 div ~ p {
-  /* Specificity = 1 + 1 = 2*/
+  /* Specificity = 1 + 1 = 2 */
   text-decoration: underline;
 }
 /*-------------------------------------------------------------------------------*/

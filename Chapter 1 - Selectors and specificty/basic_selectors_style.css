@@ -2,27 +2,13 @@
   /* Colors */
   --color-1: blue;
   --color-2: yellow;
-  --color-3: red;
-  --color-4: green;
-  --color-5: purple;
-  --color-6: orange;
-  --color-7: gray;
-  --color-8: black;
 
   /* Font family */
   --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
     serif;
 
-  /* Font size */
-  --font-size-1: 2em;
-  --font-size-2: 3em;
-  --font-size-4: 4em;
-
   /* Font weight */
   --font-weight-bold: bold;
-
-  /* Border width */
-  --border-width-1: 2px;
 }
 
 /*------------------------------- Basic Selectors -------------------------------*/
@@ -30,14 +16,17 @@
 * {
   font-family: var(--font-family-group-1);
 }
+
 /* Select all p element. Affects all p elements. Specificity = 1 */
 p {
   color: var(--color-1);
 }
+
 /* Selects all elements that have a .highlight class. Classes have a specificity = 10 */
 .highlight {
   background-color: var(--color-2);
 }
+
 /* Selects an element that have #unique id. Specificity = 100 */
 #unique {
   font-weight: var(--font-weight-bold);

@@ -6,11 +6,11 @@
       name="description"
       content="A tutorial on css topics: selectors and specificity"
     />
-    <meta name="author" content="RRC" />
+    <meta name="author" content="Rupali Roy Choudhury" />
     <meta name="keywords" content="CSS topics, selectors, specificity" />
     <title>Selectors and Specificity</title>
-    <link href="basic_selectors_style.css" rel="stylesheet" type="text/css" />
-    <!-- <link href="combine_selectors_style.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="basic_selectors_style.css" rel="stylesheet" type="text/css" /> -->
+    <link href="combine_selectors_style.css" rel="stylesheet" type="text/css" />
     <!-- <link
       href="basic_selectors_style_v2.css"
       rel="stylesheet"
@@ -20,16 +20,12 @@
       href="attribute_selectors_style.css"
       rel="stylesheet"
       type="text/css"
-    />
-    <link
-      href="pseudo_class_element_style.css"
-      rel="stylesheet"
-      type="text/css"
     /> -->
   </head>
   <body>
     <h1>CSS Selectors and Specificity</h1>
 
+    <!-- 1. Basic Selectors -->
     <section>
       <!-- 1. Tag/Element, attributes (attribute name, attribute value), content -->
       <h2>Basic Selectors</h2>
@@ -39,46 +35,37 @@
       <p>A simple sentence witj <span class="highlight">a highlight</span></p>
     </section>
 
+    <!-- 2. Combinators -->
     <section>
       <h2>Combinators</h2>
       <div class="parent">
         <p>Descendant selector example.</p>
         <span>
           <p>Child selector example.</p>
+          <label>
+            <p>A paragraph in a label</p>
+          </label>
         </span>
-      </div>
-      <div>
-        <p>1st Adjacent sibling example.</p>
-        <p>2nd Adjacent sibling example.</p>
       </div>
       <div class="father mother">
         We are the parents - father and mother
         <div class="child">I am my parent's child</div>
       </div>
+      <label class="father mother">A label with father mother</label>
+      <label class="mother">A label with only mother</label>
       <p>General sibling example.</p>
+      <div>
+        <p>1st Adjacent sibling example.</p>
+        <p>2nd Adjacent sibling example.</p>
+      </div>
     </section>
 
+    <!-- 3. Attribute Selectors -->
     <section>
       <h2>Attribute Selectors</h2>
       <input type="text" placeholder="Type here" value="First name" />
       <input type="text" placeholder="Type here" value="Last name" />
       <a href="#" title="CSS Link">CSS Link</a>
-    </section>
-
-    <section>
-      <h2>Pseudo-Classes</h2>
-      <button class="btn">Hover over me</button>
-      <ul>
-        <li>First child</li>
-        <li>Second child</li>
-        <li>Third child</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Pseudo-Elements</h2>
-      <p class="intro">This paragraph will use ::first-letter.</p>
-      <p class="quote">This will have ::before and ::after.</p>
     </section>
   </body>
 </html>

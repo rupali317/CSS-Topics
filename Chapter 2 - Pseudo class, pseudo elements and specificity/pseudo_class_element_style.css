@@ -106,9 +106,3 @@ ul li:last-child {
   
   Would you like me to add more pseudo-element examples to your existing HTML?
   */
-
-/* RRC - Specificity inline = 1000, id = 0100, class,attribute,pseudoclass = 0010, element,pseudoelements = 0001, universal selector=0000
-     Why we aim for lower specificity. Explain the use case */
-
-/* RRC - Uncomment .quote::before with green color */
-/* RRC dangers of !importatnt */

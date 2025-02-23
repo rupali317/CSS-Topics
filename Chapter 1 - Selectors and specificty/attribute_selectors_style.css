@@ -34,3 +34,7 @@ a[title="CSS Link"] {
 }
 /*RRC:Provide more examples*/
 /*-------------------------------------------------------------------------------*/
+/* RRC - Uncomment .quote::before with green color */
+/* RRC dangers of !importatnt */
+/* RRC - Specificity inline = 1000, id = 0100, class,attribute,pseudoclass = 0010, element,pseudoelements = 0001, universal selector=0000
+     Why we aim for lower specificity. Explain the use case */
