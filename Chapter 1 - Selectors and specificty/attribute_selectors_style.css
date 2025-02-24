@@ -26,14 +26,48 @@
 }
 
 /*----------------------------- Attribute Selectors -----------------------------*/
-input[placeholder] {
-  border: var(--border-width-1) solid var(--color-8);
+/* 1. Selects all input elements that have attribute name-value pair as type="text". Specificity 1 + 10 = 11 */
+input[type="text"] {
+  border: var(--border-width-1) solid var(--color-4);
 }
-a[title="CSS Link"] {
+
+/* 2. Selects all input elements that have both the attributes (attribute name and value):
+    -> .placeholder="john_doe@gmail.com"
+    -> .type="text" 
+   Specificty = 1 + 10 + 10 = 21 
+*/
+input[placeholder="john_doe@gmail.com"][type="email"] {
+  border: var(--border-width-1) solid var(--color-6);
+}
+
+/* 3. Selects all a elements where the href attribute has substring "example" present in it. Specificity = 1 + 10 = 11 */
+a[href*="example"] {
   color: var(--color-5);
 }
-/*RRC:Provide more examples*/
+
+/* Quiz: What happens here? */
+a[href="example"] {
+  color: var(--color-5);
+}
+
+/* 4. Selects all a elements where the href attribute value ends with ".org". Specificity = 1 + 10 = 11 */
+a[href$=".org"] {
+  color: var(--color-8);
+}
+
+/* 5. Selects all a elements where the href attribute value begins with "https". Specificity = 1 + 10 = 11 */
+a[href^="https"] {
+  color: var(--color-3);
+}
+
+/* Quiz: How is this interpreted? */
+a[href$=".org"][href^="https"] {
+}
+
+/* Quiz: How is this interpreted? */
+a[href$=".org"] [href^="https"] {
+}
 /*-------------------------------------------------------------------------------*/
-/* RRC dangers of !importatnt */
-/* RRC - Specificity inline = 1000, id = 0100, class,attribute,pseudoclass = 0010, element,pseudoelements = 0001, universal selector=0000
-     Why we aim for lower specificity. Explain the use case */
+/*TODO: for ~= space separated and when to use *= vs ~= */
+/* RRC dangers of !important */
+/* Why we aim for lower specificity. Explain the use case */
