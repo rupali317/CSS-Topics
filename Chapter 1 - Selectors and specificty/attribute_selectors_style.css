@@ -40,6 +40,10 @@ input[placeholder="john_doe@gmail.com"][type="email"] {
   border: var(--border-width-1) solid var(--color-6);
 }
 
+/* Quiz: How is this interpreted? */
+input[placeholder="john_doe@gmail.com"][placeholder="john_doe@gmail.com"] {
+}
+
 /* 3. Selects all a elements where the href attribute has substring "example" present in it. Specificity = 1 + 10 = 11 */
 a[href*="example"] {
   color: var(--color-5);
@@ -68,6 +72,5 @@ a[href$=".org"][href^="https"] {
 a[href$=".org"] [href^="https"] {
 }
 /*-------------------------------------------------------------------------------*/
-/*TODO: for ~= space separated and when to use *= vs ~= */
-/* RRC dangers of !important */
+/* RRC dangers of !important -> breaks specificity rules, natural cascade rules */
 /* Why we aim for lower specificity. Explain the use case */
