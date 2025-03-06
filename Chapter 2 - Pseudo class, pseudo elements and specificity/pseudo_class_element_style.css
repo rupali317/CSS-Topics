@@ -25,6 +25,10 @@
   --border-width-1: 2px;
 }
 
+/* Why pseudo classes and pseudo elements are needed? */
+/* ::after, ::before */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes Egs-> :hover, :active , :focus, :nth-child(), :has(), :nth-of-type() etc*/
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements Egs-> ::before, ::after , ::marker*/
 /*-------------------------------- Pseudo-Classes -------------------------------*/
 .btn:hover {
   background-color: var(--color-6);
@@ -60,7 +64,8 @@ ul li:last-child {
 
 /* 
   ### **What is a Pseudo-Element?**
-  A **pseudo-element** is a CSS feature that allows you to style specific parts of an element without adding extra HTML. They behave like real elements but don’t appear in the DOM.
+  A **pseudo-element** is a CSS feature that allows you to style specific parts of an element without adding extra HTML. 
+  They behave like real elements but don’t appear in the DOM.
   
   ### **Use Cases of Pseudo-Elements**
   1. **Styling the First Letter or Line of Text**
