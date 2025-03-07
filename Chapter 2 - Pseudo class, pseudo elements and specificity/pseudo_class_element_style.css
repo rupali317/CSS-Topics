@@ -26,9 +26,24 @@
 }
 
 /* Why pseudo classes and pseudo elements are needed? */
-/* ::after, ::before */
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
-   Egs-> :hover, :active , :focus, :nth-child(), :has(), :nth-of-type() etc
+  :hover
+  :active
+  :focus
+  :focus-within
+  :focus-visible
+  :nth-child()
+  :empty
+  :checked
+  :not()
+  :last-of-type
+  :has()
+  :nth-of-type()
+  :first-child
+  :last-child
+  :disabled
+
+  ::-webkit-scrollbar:vertical
 */
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements 
    ::before
