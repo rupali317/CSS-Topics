@@ -27,8 +27,17 @@
 
 /* Why pseudo classes and pseudo elements are needed? */
 /* ::after, ::before */
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes Egs-> :hover, :active , :focus, :nth-child(), :has(), :nth-of-type() etc*/
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements Egs-> ::before, ::after , ::marker*/
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
+   Egs-> :hover, :active , :focus, :nth-child(), :has(), :nth-of-type() etc
+*/
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements 
+   ::before
+   ::after 
+   ::marker
+   ::placeholder
+   ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb
+   ::-webkit-input-placeholder
+*/
 /*-------------------------------- Pseudo-Classes -------------------------------*/
 .btn:hover {
   background-color: var(--color-6);
