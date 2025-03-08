@@ -21,7 +21,50 @@
   <body>
     <h1>Pseudo classes, pseudo elements and specificity</h1>
 
-    <!-- 1. Pseudo-Classes -->
+    <!-- 1. Pseudo-Elements -->
+    <!-- Why pseudo elements are needed? 
+         style specific parts of elements that were otherwise difficult or 
+         impossible to target using regular CSS selectors.
+         Created for styling purpose, not selected by JS, not part of DOM (do not appear in the DOM tree as nodes)
+         
+         Before: 
+         - Styling part of an element difficult/impossible/complex workaround, 
+         - Redundant HTML esp for decorative purpose  -->
+    <section>
+      <h2>Pseudo-Elements</h2>
+      <p class="without-first-letter">
+        <span>T</span>his paragraph will use not use ::first-letter.
+        <!-- Extra HTML element -->
+      </p>
+      <p class="first-letter">This paragraph will use ::first-letter.</p>
+      <p class="without-first-line">
+        <span
+          >This is a long paragraph. This is a long paragraph. This is a long
+          paragraph. This is a long paragraph. This is a long paragraph. This is
+          a long paragraph. This is a long paragraph. This is a long paragraph.
+          This is a long paragraph. This
+        </span>
+        is a long paragraph. This is a long paragraph.
+      </p>
+      <p class="first-line">
+        This is a long paragraph. This is a long paragraph. This is a long
+        paragraph. This is a long paragraph. This is a long paragraph. This is a
+        long paragraph. This is a long paragraph. This is a long paragraph. This
+        is a long paragraph. This is a long paragraph. This is a long paragraph.
+      </p>
+      <blockquote class="without-after-before">
+        <span class="one">“</span>This will not use ::before and ::after.<span
+          class="two"
+          >”</span
+        >
+      </blockquote>
+      <blockquote class="after-before">
+        This will have ::before and ::after.
+      </blockquote>
+    </section>
+
+    <!-- Why pseudo classes are needed? -->
+    <!-- 2. Pseudo-Classes -->
     <section>
       <h2>Pseudo-Classes</h2>
       <button class="btn">Hover over me</button>
@@ -30,13 +73,6 @@
         <li>Second child</li>
         <li>Third child</li>
       </ul>
-    </section>
-
-    <!-- 2. Pseudo-Elements -->
-    <section>
-      <h2>Pseudo-Elements</h2>
-      <p class="intro">This paragraph will use ::first-letter.</p>
-      <p class="quote">This will have ::before and ::after.</p>
     </section>
   </body>
 </html>

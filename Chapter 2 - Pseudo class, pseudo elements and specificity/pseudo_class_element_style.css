@@ -25,7 +25,65 @@
   --border-width-1: 2px;
 }
 
-/* Why pseudo classes and pseudo elements are needed? */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements 
+   ::before
+   ::after 
+   ::marker
+   ::placeholder
+   ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb
+   ::-webkit-input-placeholder
+
+   ::backdrop
+   ::first-letter
+   ::first-line
+*/
+/*------------------------------- Pseudo-Elements -------------------------------*/
+.first-letter::first-letter,
+.without-first-letter > span {
+  /* Pseudo elements have the same specificty of an element = 1 point */
+  /* Pseudo elements are not standalone elements. You need to select elements/classes/id before applying the pseudo element */
+  font-size: var(--font-size-1);
+  color: var(--color-3);
+}
+
+.without-first-line > span,
+.first-line::first-line {
+  color: var(--color-7);
+}
+
+.intro::first-line {
+  color: var(--color-5);
+}
+
+.without-after-before > span {
+  color: var(--color-1);
+}
+
+.after-before::before {
+  content: "“";
+  color: var(--color-1);
+}
+
+.after-before::after {
+  content: "”";
+  color: var(--color-1);
+}
+
+/* Quiz: and what do you think will happen? */
+/* .after-before::before {
+  content: "“";
+  color: var(--color-3);
+} */
+/* Quiz: Now that we can easily have different colors for quotes using pseudi elements, 
+how would you approach different colors without using pseudo elements and only using regular selectors? */
+.without-after-before span.one {
+  color: var(--color-1);
+}
+.without-after-before span.two {
+  color: var(--color-3);
+}
+/*-------------------------------------------------------------------------------*/
+
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
   :hover
   :active
@@ -45,14 +103,7 @@
 
   ::-webkit-scrollbar:vertical
 */
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements 
-   ::before
-   ::after 
-   ::marker
-   ::placeholder
-   ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb
-   ::-webkit-input-placeholder
-*/
+
 /*-------------------------------- Pseudo-Classes -------------------------------*/
 .btn:hover {
   background-color: var(--color-6);
@@ -62,25 +113,6 @@ ul li:first-child {
 }
 ul li:last-child {
   font-style: italic;
-}
-/*-------------------------------------------------------------------------------*/
-
-/*------------------------------- Pseudo-Elements -------------------------------*/
-.intro::first-letter {
-  font-size: var(--font-size-1);
-  color: var(--color-3);
-}
-.quote::before {
-  content: "“";
-  color: var(--color-7);
-}
-/* .quote::before {
-  content: "“";
-  color: var(--color-3);
-} */
-.quote::after {
-  content: "”";
-  color: var(--color-7);
 }
 /*-------------------------------------------------------------------------------*/
 
