@@ -23,14 +23,14 @@
   --font-weight-bold: bold;
 
   /* Border width */
-  --border-width-1: 2px;
+  --border-width-1: 0.125rem;
 
   /* Border radius */
-  --border-radius-1: 10px;
-  --border-radius-2: 20px;
+  --border-radius-1: 1rem;
+  --border-radius-2: 1.5rem;
 
   /* Spacing */
-  --space-1: 10px;
+  --space-1: 1rem;
 }
 
 html,
@@ -42,11 +42,10 @@ body {
    ::before
    ::after 
    ::marker
-   ::placeholder (TODO)
+   ::placeholder, ::-webkit-input-placeholder
    ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb
-   ::-webkit-input-placeholder (TODO)
 
-   ::backdrop (TODO)
+   ::backdrop (rrc TODO)
    ::first-letter
    ::first-line
 */
@@ -73,7 +72,7 @@ body {
 }
 
 .after-before::before {
-  content: "“";
+  content: "“"; /* content works with pseudo elements and not on real selectors */
   color: var(--color-1);
 }
 
@@ -90,9 +89,10 @@ body {
 
 /* Quiz: Now that we can easily have different colors for quotes using pseudo elements, 
 how would you approach different colors without using pseudo elements and only using regular selectors?
-Explain the limitation of having extra HTML in terms of maintainence */
+Explain the limitation of having extra HTML in terms of maintainence AND performance */
 
-/* RRC - Explain the special case for ::marker - certain CSS limitations?? */
+/* ::marker supports - color, content, font css properties */
+/* ::marker does not support - background, margin, width, padding, margin */
 ::marker {
   color: var(--color-6);
 }
@@ -101,6 +101,12 @@ Explain the limitation of having extra HTML in terms of maintainence */
 /* -webkit-, -moz- -> vendor prefixes (allow browsers to support experimental or 
 non-standard CSS before they become official.) */
 /* Natives take precedence over vendor prefix transform over -webkit-transform */
+::-webkit-input-placeholder,
+::placeholder {
+  color: var(--color-6);
+}
+/* Quiz: What do you think will happen if we do [placeholder]? */
+
 /* Supports width (vertical scroll), height (horizontal scroll), background */
 *::-webkit-scrollbar {
   width: var(--space-1);
@@ -124,17 +130,10 @@ non-standard CSS before they become official.) */
   scrollbar-width: thin;
   scrollbar-color: var(--color-5) var(--color-6);
 }
-
+/* Quiz: pseudo elements like ::marker, ::placeholder can be used independently. why? 
+Why can't ::after, ::before be used independently? */
 /*-------------------------------------------------------------------------------*/
 
 /*
-RRC qs:
-  1. No, we don't because cant i just target .first-letter?
-
-2. How much performance is affected if we use a lot of HTML elements for styling purposes instead of pseudo elements in a large application?
-
-3. Why ::marker does not support certain CSS? 
-
-4. It also seems that you can use ::marker as standalone like ::marker {...} in your previous response you said that pseudo elements must be attached with an element but that's not the case for ::marker
-  
-  */
+RRC qs:Why ::marker does not support certain CSS? 
+*/
