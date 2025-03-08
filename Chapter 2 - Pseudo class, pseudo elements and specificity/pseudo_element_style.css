@@ -8,6 +8,7 @@
   --color-6: orange;
   --color-7: gray;
   --color-8: black;
+  --color-9: white;
 
   /* Font family */
   --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
@@ -26,17 +27,23 @@
 
   /* Border radius */
   --border-radius-1: 10px;
+  --border-radius-2: 20px;
 
   /* Spacing */
   --space-1: 10px;
 }
 
+html,
+body {
+  background-color: var(--color-9);
+}
+
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements 
    ::before
    ::after 
-   ::marker (TODO)
+   ::marker
    ::placeholder (TODO)
-   ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb (TODO)
+   ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb
    ::-webkit-input-placeholder (TODO)
 
    ::backdrop (TODO)
@@ -47,8 +54,7 @@
 .first-letter::first-letter,
 .without-first-letter > span {
   /* Pseudo elements have the same specificty of an element = 1 point */
-  /* Pseudo elements are not standalone elements. 
-  You need to select elements/classes/id before applying the pseudo element - RRC for ::marker this does not work???*/
+  /* Pseudo elements are not standalone elements. */
   font-size: var(--font-size-1);
   color: var(--color-3);
 }
@@ -81,28 +87,44 @@
   content: "“";
   color: var(--color-3);
 } */
-/* Quiz: Now that we can easily have different colors for quotes using pseudi elements, 
-how would you approach different colors without using pseudo elements and only using regular selectors? */
 
-/* RRC - Explain the special case for ::marker - ceratin CSS limitations?? */
+/* Quiz: Now that we can easily have different colors for quotes using pseudo elements, 
+how would you approach different colors without using pseudo elements and only using regular selectors?
+Explain the limitation of having extra HTML in terms of maintainence */
+
+/* RRC - Explain the special case for ::marker - certain CSS limitations?? */
 ::marker {
   color: var(--color-6);
 }
 
-/* RRC: Experiment in Firefox, see if width is only supported in -webkit-scrollbar, show the list
-of properties each of them support */
+/* * As of 8 Mar 2025, -webkit-* is not supported in Firefox */
+/* -webkit-, -moz- -> vendor prefixes (allow browsers to support experimental or 
+non-standard CSS before they become official.) */
+/* Natives take precedence over vendor prefix transform over -webkit-transform */
+/* Supports width (vertical scroll), height (horizontal scroll), background */
 *::-webkit-scrollbar {
   width: var(--space-1);
+  background: var(--color-3);
 }
 
-*::-webkit-scrollbar-track {
-  background-color: var(--color-2);
-}
-
+/* Supports background, border radius, border, box-shadow */
 *::-webkit-scrollbar-thumb {
   border-radius: var(--border-radius-1);
   background-color: var(--color-1);
 }
+
+/* Supports background, border radius, border, box-shadow */
+*::-webkit-scrollbar-track {
+  background-color: var(--color-2);
+  border-radius: var(--border-radius-2);
+}
+
+/* As of 8 Mar 2025, Safari does not support these, -webkit version will work */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-5) var(--color-6);
+}
+
 /*-------------------------------------------------------------------------------*/
 
 /*
