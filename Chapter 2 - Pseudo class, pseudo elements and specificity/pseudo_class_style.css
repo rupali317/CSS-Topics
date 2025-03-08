@@ -22,13 +22,13 @@
   --font-weight-bold: bold;
 
   /* Border width */
-  --border-width-1: 2px;
+  --border-width-1: 0.125rem;
 
   /* Border radius */
-  --border-radius-1: 10px;
+  --border-radius-1: 1rem;
 
   /* Spacing */
-  --space-1: 10px;
+  --space-1: 1rem;
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
@@ -63,14 +63,29 @@ RRC: why these psuedo classes are not part of psuedo elements? Show the differen
     ::-webkit-scrollbar:vertical
   */
 
-/*-------------------------------- Pseudo-Classes -------------------------------*/
+/*-------------------------------- User action pseudo-classes -------------------------------*/
 .btn:hover {
-  background-color: var(--color-6);
+  background-color: var(--color-6); /* orange */
 }
+.btn:active {
+  background-color: var(--color-5); /* purple */
+}
+.btn:focus {
+  background-color: var(--color-4); /* green */
+}
+.btn:focus-within {
+  background-color: var(--color-3); /* red */
+}
+.btn:focus-visible {
+  background-color: var(--color-2); /* yellow */
+}
+/*-------------------------------------------------------------------------------------------*/
+
+/*------------------------------ Tree structural pseudo-classes -----------------------------*/
 ul li:first-child {
   font-weight: var(--font-weight-bold);
 }
 ul li:last-child {
   font-style: italic;
 }
-/*-------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
