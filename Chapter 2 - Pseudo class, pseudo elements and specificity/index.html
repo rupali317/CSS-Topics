@@ -12,11 +12,8 @@
       content="CSS topics, pseudo classes, pseudo elements, specificity"
     />
     <title>Pseudo classes, pseudo elements and specificity</title>
-    <link
-      href="pseudo_class_element_style.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link href="pseudo_element_style.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="pseudo_class_style.css" rel="stylesheet" type="text/css" /> -->
   </head>
   <body>
     <h1>Pseudo classes, pseudo elements and specificity</h1>
@@ -32,11 +29,15 @@
          - Redundant HTML esp for decorative purpose  -->
     <section>
       <h2>Pseudo-Elements</h2>
+
+      <!-- first letter -->
       <p class="without-first-letter">
         <span>T</span>his paragraph will use not use ::first-letter.
         <!-- Extra HTML element -->
       </p>
       <p class="first-letter">This paragraph will use ::first-letter.</p>
+
+      <!-- first line -->
       <p class="without-first-line">
         <span
           >This is a long paragraph. This is a long paragraph. This is a long
@@ -52,6 +53,8 @@
         long paragraph. This is a long paragraph. This is a long paragraph. This
         is a long paragraph. This is a long paragraph. This is a long paragraph.
       </p>
+
+      <!-- after, before-->
       <blockquote class="without-after-before">
         <span class="one">“</span>This will not use ::before and ::after.<span
           class="two"
@@ -61,6 +64,20 @@
       <blockquote class="after-before">
         This will have ::before and ::after.
       </blockquote>
+
+      <!-- marker -->
+      <ol>
+        <li>Ordered item 1</li>
+        <li>Ordered item 2</li>
+        <li>Ordered item 3</li>
+        <li>Ordered item 4</li>
+      </ol>
+      <ul>
+        <li>Unordered item 1</li>
+        <li>Unordered item 2</li>
+        <li>Unordered item 3</li>
+        <li>Unordered item 4</li>
+      </ul>
     </section>
 
     <!-- Why pseudo classes are needed? -->

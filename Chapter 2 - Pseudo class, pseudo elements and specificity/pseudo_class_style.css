@@ -1,0 +1,76 @@
+:root {
+  /* Colors */
+  --color-1: blue;
+  --color-2: yellow;
+  --color-3: red;
+  --color-4: green;
+  --color-5: purple;
+  --color-6: orange;
+  --color-7: gray;
+  --color-8: black;
+
+  /* Font family */
+  --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+
+  /* Font size */
+  --font-size-1: 2em;
+  --font-size-2: 3em;
+  --font-size-4: 4em;
+
+  /* Font weight */
+  --font-weight-bold: bold;
+
+  /* Border width */
+  --border-width-1: 2px;
+
+  /* Border radius */
+  --border-radius-1: 10px;
+
+  /* Spacing */
+  --space-1: 10px;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
+RRC: why these psuedo classes are not part of psuedo elements? Show the difference
+   1. User action pseudo-classes (These pseudo-classes require some interaction by the user 
+   in order for them to apply, such as holding a mouse pointer over an element.)
+        :hover
+        :active
+        :focus
+        :focus-within
+        :focus-visible
+
+   2. Functional pseudo-classes
+        :not()
+        :has()
+
+   3. Tree-structural pseudo-classes (These pseudo-classes relate to the location of an 
+   element within the document tree.)
+        :root 
+        :empty
+        :nth-child()
+        :first-child
+        :last-child
+        :last-of-type
+        :nth-of-type()
+
+    4. Input pseudo-classes (These pseudo-classes relate to form elements, and enable selecting elements 
+    based on HTML attributes and the state that the field is in before and after interaction.)
+        :checked
+        :disabled
+  
+    ::-webkit-scrollbar:vertical
+  */
+
+/*-------------------------------- Pseudo-Classes -------------------------------*/
+.btn:hover {
+  background-color: var(--color-6);
+}
+ul li:first-child {
+  font-weight: var(--font-weight-bold);
+}
+ul li:last-child {
+  font-style: italic;
+}
+/*-------------------------------------------------------------------------------*/
