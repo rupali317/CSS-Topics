@@ -32,8 +32,7 @@
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
-RRC: why these psuedo classes are not part of psuedo elements? Show the difference
-   1. User action pseudo-classes (These pseudo-classes require some interaction by the user 
+   1. (RRc todo) User action pseudo-classes (These pseudo-classes require some interaction by the user 
    in order for them to apply, such as holding a mouse pointer over an element.)
         :hover
         :active
@@ -41,11 +40,11 @@ RRC: why these psuedo classes are not part of psuedo elements? Show the differen
         :focus-within
         :focus-visible
 
-   2. Functional pseudo-classes
+   2. (RRc todo) Functional pseudo-classes
         :not()
         :has()
 
-   3. Tree-structural pseudo-classes (These pseudo-classes relate to the location of an 
+   3. (RRc todo) Tree-structural pseudo-classes (These pseudo-classes relate to the location of an 
    element within the document tree.)
         :root 
         :empty
@@ -55,7 +54,7 @@ RRC: why these psuedo classes are not part of psuedo elements? Show the differen
         :last-of-type
         :nth-of-type()
 
-    4. Input pseudo-classes (These pseudo-classes relate to form elements, and enable selecting elements 
+    4. (RRc todo) Input pseudo-classes (These pseudo-classes relate to form elements, and enable selecting elements 
     based on HTML attributes and the state that the field is in before and after interaction.)
         :checked
         :disabled
@@ -64,21 +63,27 @@ RRC: why these psuedo classes are not part of psuedo elements? Show the differen
   */
 
 /*-------------------------------- User action pseudo-classes -------------------------------*/
-.btn:hover {
+.btn:hover,
+.input:hover {
   background-color: var(--color-6); /* orange */
 }
-.btn:active {
+.btn:active,  /*focus-within takes prioerity over active. RRC*/
+.input:active {
   background-color: var(--color-5); /* purple */
 }
-.btn:focus {
+.btn:focus, /* .btn:focus-visible over :focus */
+.input:focus {
   background-color: var(--color-4); /* green */
 }
-.btn:focus-within {
+.btn:focus-within,
+.input:focus-within {
   background-color: var(--color-3); /* red */
 }
-.btn:focus-visible {
+.btn:focus-visible,
+.input:focus-visible {
   background-color: var(--color-2); /* yellow */
 }
+/*rrc: difference betwee :focus, :focus-within, :focus-visible ? and use cases? */
 /*-------------------------------------------------------------------------------------------*/
 
 /*------------------------------ Tree structural pseudo-classes -----------------------------*/
