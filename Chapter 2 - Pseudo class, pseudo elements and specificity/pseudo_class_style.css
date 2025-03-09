@@ -32,7 +32,7 @@
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
-   1. (RRc todo) User action pseudo-classes (These pseudo-classes require some interaction by the user 
+   1. (RRC todo) User action pseudo-classes (These pseudo-classes require some interaction by the user 
    in order for them to apply, such as holding a mouse pointer over an element.)
         :hover
         :active
@@ -40,11 +40,11 @@
         :focus-within
         :focus-visible
 
-   2. (RRc todo) Functional pseudo-classes
+   2. (RRC todo) Functional pseudo-classes
         :not()
         :has()
 
-   3. (RRc todo) Tree-structural pseudo-classes (These pseudo-classes relate to the location of an 
+   3. (RRC todo) Tree-structural pseudo-classes (These pseudo-classes relate to the location of an 
    element within the document tree.)
         :root 
         :empty
@@ -54,7 +54,7 @@
         :last-of-type
         :nth-of-type()
 
-    4. (RRc todo) Input pseudo-classes (These pseudo-classes relate to form elements, and enable selecting elements 
+    4. (RRC todo) Input pseudo-classes (These pseudo-classes relate to form elements, and enable selecting elements 
     based on HTML attributes and the state that the field is in before and after interaction.)
         :checked
         :disabled
@@ -83,7 +83,7 @@
 .input:focus-visible {
   background-color: var(--color-2); /* yellow */
 }
-/*rrc: difference betwee :focus, :focus-within, :focus-visible ? and use cases? */
+/*RRC: difference betwee :focus, :focus-within, :focus-visible ? and use cases? */
 /*-------------------------------------------------------------------------------------------*/
 
 /*-------------------------------- Functional pseudo-classes --------------------------------*/

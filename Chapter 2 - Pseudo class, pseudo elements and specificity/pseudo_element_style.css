@@ -10,7 +10,7 @@
   --color-8: black;
   --color-9: white;
   --color-10: antiquewhite;
-  --color-11: hsla(123, 23%, 23%, 0.6);
+  --color-11: hsla(49, 33%, 91%, 0.6);
 
   /* Font family */
   --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
@@ -33,6 +33,10 @@
 
   /* Spacing */
   --space-1: 1rem;
+  --space-2: 10rem;
+
+  /* Blur */
+  --blur-1: blur(0.5rem);
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements 
@@ -130,4 +134,16 @@ non-standard CSS before they become official.) */
 /* Quiz: pseudo elements like ::marker, ::placeholder can be used independently. why? 
 Why can't ::after, ::before be used independently? */
 
+/* FYI - dialog and ::backdrop */
+dialog {
+  background-color: var(--color-10);
+  min-width: var(--space-2);
+  border-radius: var(--border-radius-2);
+}
+
+dialog::backdrop {
+  background-color: var(--color-11);
+  backdrop-filter: var(--blur-1);
+  -webkit-backdrop-filter: var(--blur-1);
+}
 /*-------------------------------------------------------------------------------*/
