@@ -38,18 +38,6 @@
   --blur-1: blur(10px);
 }
 
-.invisible {
-  display: none;
-}
-
-dialog {
-  /* position: absolute; */
-  background-color: var(--color-10);
-  padding: var(--space-1);
-  border-radius: var(--border-radius-1);
-  min-width: 3rem;
-}
-
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements 
    ::before
    ::after 
@@ -57,7 +45,6 @@ dialog {
    ::placeholder, ::-webkit-input-placeholder
    ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb
 
-   ::backdrop
    ::first-letter
    ::first-line
 */
@@ -145,10 +132,5 @@ non-standard CSS before they become official.) */
 
 /* Quiz: pseudo elements like ::marker, ::placeholder can be used independently. why? 
 Why can't ::after, ::before be used independently? */
-
-dialog::backdrop {
-  background-color: var(--color-11);
-  backdrop-filter: var(--blur-1);
-}
 
 /*-------------------------------------------------------------------------------*/
