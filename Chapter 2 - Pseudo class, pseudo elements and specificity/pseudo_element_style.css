@@ -9,6 +9,8 @@
   --color-7: gray;
   --color-8: black;
   --color-9: white;
+  --color-10: antiquewhite;
+  --color-11: hsla(123, 23%, 23%, 0.6);
 
   /* Font family */
   --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
@@ -31,11 +33,21 @@
 
   /* Spacing */
   --space-1: 1rem;
+
+  /* Blur */
+  --blur-1: blur(10px);
 }
 
-html,
-body {
-  background-color: var(--color-9);
+.invisible {
+  display: none;
+}
+
+dialog {
+  /* position: absolute; */
+  background-color: var(--color-10);
+  padding: var(--space-1);
+  border-radius: var(--border-radius-1);
+  min-width: 3rem;
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements 
@@ -45,7 +57,7 @@ body {
    ::placeholder, ::-webkit-input-placeholder
    ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb
 
-   ::backdrop (rrc TODO)
+   ::backdrop
    ::first-letter
    ::first-line
 */
@@ -92,7 +104,7 @@ how would you approach different colors without using pseudo elements and only u
 Explain the limitation of having extra HTML in terms of maintainence AND performance */
 
 /* ::marker supports - color, content, font css properties */
-/* ::marker does not support - background, margin, width, padding, margin */
+/* ::marker (inline) does not support - background, margin, width, padding, margin */
 ::marker {
   color: var(--color-6);
 }
@@ -130,10 +142,13 @@ non-standard CSS before they become official.) */
   scrollbar-width: thin;
   scrollbar-color: var(--color-5) var(--color-6);
 }
+
 /* Quiz: pseudo elements like ::marker, ::placeholder can be used independently. why? 
 Why can't ::after, ::before be used independently? */
-/*-------------------------------------------------------------------------------*/
 
-/*
-RRC qs:Why ::marker does not support certain CSS? 
-*/
+dialog::backdrop {
+  background-color: var(--color-11);
+  backdrop-filter: var(--blur-1);
+}
+
+/*-------------------------------------------------------------------------------*/
