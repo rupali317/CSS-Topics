@@ -42,10 +42,10 @@
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements 
    ::before
    ::after 
-   ::marker
    ::placeholder, ::-webkit-input-placeholder
    ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb
-
+   
+   ::marker
    ::first-letter
    ::first-line
 */
@@ -53,7 +53,6 @@
 .first-letter::first-letter,
 .without-first-letter > span {
   /* Pseudo elements have the same specificty of an element = 1 point */
-  /* Pseudo elements are not standalone elements. */
   font-size: var(--font-size-1);
   color: var(--color-3);
 }
@@ -63,16 +62,12 @@
   color: var(--color-7);
 }
 
-.intro::first-line {
-  color: var(--color-5);
-}
-
 .without-after-before > span {
   color: var(--color-1);
 }
 
 .after-before::before {
-  content: "“"; /* content works with pseudo elements and not on real selectors */
+  content: "“"; /* content works with pseudo elements and not on real selectors. it works on ::marker, ::after, ::before */
   color: var(--color-1);
 }
 
@@ -87,10 +82,6 @@
   color: var(--color-3);
 } */
 
-/* Quiz: Now that we can easily have different colors for quotes using pseudo elements, 
-how would you approach different colors without using pseudo elements and only using regular selectors?
-Explain the limitation of having extra HTML in terms of maintainence AND performance */
-
 /* ::marker supports - color, content, font css properties */
 /* ::marker (inline) does not support - background, margin, width, padding, margin */
 ::marker {
@@ -100,7 +91,6 @@ Explain the limitation of having extra HTML in terms of maintainence AND perform
 /* * As of 8 Mar 2025, -webkit-* is not supported in Firefox */
 /* -webkit-, -moz- -> vendor prefixes (allow browsers to support experimental or 
 non-standard CSS before they become official.) */
-/* Natives take precedence over vendor prefix transform over -webkit-transform */
 ::-webkit-input-placeholder,
 ::placeholder {
   color: var(--color-6);
