@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="A tutorial on css topics: pseudo classes, pseudo elements and specificity"
+    />
+    <meta name="author" content="RRC" />
+    <meta name="keywords" content="CSS topics, pseudo classes, specificity" />
+    <title>Pseudo classes and specificity</title>
+    <link href="pseudo_element_style.css" rel="stylesheet" type="text/css" />
+    <link href="pseudo_class_style.css" rel="stylesheet" type="text/css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <h1>Pseudo classes and specificity</h1>
+
+    <!-- 2. Pseudo-Classes -->
+    <!-- Why pseudo classes are needed?
+     Pseudo-classes modify the state or behavior of existing element 
+     
+     Before:
+     - More reliance on JS. LHarder to maintain with extra classes/styles
+     -->
+    <!-- Pseudo elements vs Pseudo class 
+      Pseudo elements: creates a virtual element to style specific part of HTML
+      Pseudo class: does not create new elements, modifies the state of element or filters
+     -->
+    <section>
+      <h2>Pseudo-Classes</h2>
+
+      <!-- User action -->
+      <button class="btn">Hover over me</button>
+      <input class="input" type="text" />
+
+      <!-- Tree structural -->
+      <ul>
+        <li>First child</li>
+        <li>Second child</li>
+        <li>Third child</li>
+      </ul>
+    </section>
+  </body>
+</html>
