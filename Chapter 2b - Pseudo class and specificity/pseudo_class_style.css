@@ -32,32 +32,36 @@
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
-   1. (RRC todo) User action pseudo-classes (These pseudo-classes require some interaction by the user 
+   1. User action pseudo-classes (These pseudo-classes require some interaction by the user 
    in order for them to apply, such as holding a mouse pointer over an element.)
         :hover
         :active
         :focus
         :focus-within
-        :focus-visible
+        :focus-visible (RRC todo)
 
-   2. (RRC todo) Functional pseudo-classes
-        :not()
-        :has()
-
-   3. (RRC todo) Tree-structural pseudo-classes (These pseudo-classes relate to the location of an 
+   2. Tree-structural pseudo-classes (These pseudo-classes relate to the location of an 
    element within the document tree.)
-        :root 
-        :empty
-        :nth-child()
+        :root - refers to html
+        :empty (RRC todo)
+        :nth-child() (RRC todo)
         :first-child
         :last-child
-        :last-of-type
-        :nth-of-type()
+        :last-of-type (RRC todo)
+        :nth-of-type() (RRC todo)
 
-    4. (RRC todo) Input pseudo-classes (These pseudo-classes relate to form elements, and enable selecting elements 
+    3. Functional pseudo-classes
+        :not() (RRC todo)
+        :has()  (RRC todo)  
+
+    4. Input pseudo-classes (These pseudo-classes relate to form elements, and enable selecting elements 
     based on HTML attributes and the state that the field is in before and after interaction.)
         :checked
         :disabled
+        (RRC todo) - check more
+    5. Location pseudo-classes (related to links)
+        :link
+        :visited
   */
 
 /* Start - Helper classes*/
@@ -130,6 +134,42 @@ tr:focus-within {
 /* Quiz: What would happen if I do tr:focus? */
 
 /*RRC: difference betwee :focus, :focus-within, :focus-visible ? and use cases? */
+
+/* Quiz: Do you think pseudo classes like :link, :visited will work on <div>? what about <button>?*/
+/*-------------------------------------------------------------------------------------------*/
+
+/*------------------------------ Tree structural pseudo-classes -----------------------------*/
+/* Selects the first child element/descendant element of its parent 
+Selects the first li of ul */
+li:first-child {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Selects the last child element/descendant element of its parent. 
+Selects the last li of ul */
+li:last-child {
+  font-style: italic;
+}
+
+/*Quiz: which <p> in .container gets styled? */
+/* .container p:last-child {
+  font-style: italic;
+} */
+
+/* Quiz: what happens here? */
+/* .container > p:last-child {
+  font-style: italic;
+} */
+/*-------------------------------------------------------------------------------------------*/
+
+/*-------------------------------- Functional pseudo-classes --------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+
+/*---------------------------------- Input pseudo-classes -----------------------------------*/
+/* RRC: Does input checkbox not have focus state?*/
+/*-------------------------------------------------------------------------------------------*/
+
+/*--------------------------------- Location pseudo-classes ---------------------------------*/
 div:link {
   color: var(--color-6); /* orange */
 }
@@ -145,26 +185,4 @@ a:hover {
 a:active {
   color: var(--color-7); /* gray */
 }
-/* Quiz: Do you think pseudo classes like :link, :visited will work on <div>? what about <button>?*/
-/*-------------------------------------------------------------------------------------------*/
-
-/*-------------------------------- Functional pseudo-classes --------------------------------*/
-/*-------------------------------------------------------------------------------------------*/
-
-/*------------------------------ Tree structural pseudo-classes -----------------------------*/
-/* Selects the first child element of its parent 
-Selects the first li of ul */
-ul li:first-child {
-  font-weight: var(--font-weight-bold);
-}
-
-/* Selects the last child element of its parent. 
-Selects the last li of ul */
-ul li:last-child {
-  font-style: italic;
-}
-/*-------------------------------------------------------------------------------------------*/
-
-/*---------------------------------- Input pseudo-classes -----------------------------------*/
-/* RRC: Does input checkbox not have focus state?*/
 /*-------------------------------------------------------------------------------------------*/
