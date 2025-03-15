@@ -51,8 +51,8 @@
         :nth-of-type() (RRC todo)
 
     3. Functional pseudo-classes
-        :not() (RRC todo)
-        :has()  (RRC todo)  
+        :not() 
+        :has()  (RRC todo)  :has(textarea), :has(input[type="checkbox"]:checked), :has(.classname), :has(input[type="radio"]:checked), :has(input[type="radio"]:not(:checked))
 
     4. Input pseudo-classes (These pseudo-classes relate to form elements, and enable selecting elements 
     based on HTML attributes and the state that the field is in before and after interaction.)
@@ -178,6 +178,38 @@ li:nth-child(n + 2) {
 /*-------------------------------------------------------------------------------------------*/
 
 /*-------------------------------- Functional pseudo-classes --------------------------------*/
+/* not() matches any elements that are not part of the selectors */
+section {
+  padding: var(--space-1);
+  border-bottom: var(--border-width-1) solid var(--color-7);
+}
+/* 
+section:last-child {
+  border-bottom: none;
+} */
+/* Below is a shortcut*/
+/* :not() does not have a specificty. Whatever selector is part of the not raguments will have the specificity */
+/* section:not(:last-child) {
+  padding: var(--space-1);
+  border-bottom: var(--border-width-1) solid var(--color-7);
+} */
+
+/* :not(<complex-selector-list>), supports nesting */
+/* <complex-selector-list> = class selctors, attribute selector, pseudo class*/
+section ul li:not(:first-child, :last-child) {
+  font-size: x-large;
+}
+
+/* Quiz: What will happen here? */
+input:not([class]) {
+  font-style: italic;
+}
+
+/* Quiz: What will happen here?
+Hint: :not() works on real selectors */
+input:not(::placeholder) {
+  color: var(--color-3);
+}
 /*-------------------------------------------------------------------------------------------*/
 
 /*---------------------------------- Input pseudo-classes -----------------------------------*/
