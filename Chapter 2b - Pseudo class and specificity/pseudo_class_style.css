@@ -44,7 +44,7 @@
    element within the document tree.)
         :root - refers to html
         :empty (RRC todo)
-        :nth-child() (RRC todo)
+        :nth-child()
         :first-child
         :last-child
         :last-of-type (RRC todo)
@@ -56,8 +56,8 @@
 
     4. Input pseudo-classes (These pseudo-classes relate to form elements, and enable selecting elements 
     based on HTML attributes and the state that the field is in before and after interaction.)
-        :checked
-        :disabled
+        :checked (RRC todo)
+        :disabled (RRC todo)
         (RRC todo) - check more
     5. Location pseudo-classes (related to links)
         :link
@@ -139,6 +139,11 @@ tr:focus-within {
 /*-------------------------------------------------------------------------------------------*/
 
 /*------------------------------ Tree structural pseudo-classes -----------------------------*/
+/* :empty selects elements with no children, or text within */
+.api-data:empty::before {
+  content: "No data yet";
+}
+
 /* Selects the first child element/descendant element of its parent 
 Selects the first li of ul */
 li:first-child {
@@ -159,6 +164,16 @@ li:last-child {
 /* Quiz: what happens here? */
 /* .container > p:last-child {
   font-style: italic;
+} */
+
+/* n=0 2nd child is selected, n=1 3rd child is selected, n=2 4th child is selected*/
+li:nth-child(n + 2) {
+  color: var(--color-6);
+}
+
+/* Quiz: what happens here? */
+/* li:nth-child(-n + 3) {
+  border: var(--border-width-1) solid var(--color-6);
 } */
 /*-------------------------------------------------------------------------------------------*/
 
