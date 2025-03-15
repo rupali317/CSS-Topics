@@ -1,0 +1,65 @@
+/*
+https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
+These pseudo-classes require some interaction by the user in order for them to apply, 
+such as holding a mouse pointer over an element.
+        :hover
+        :active
+        :focus
+        :focus-within
+        :focus-visible (RRC todo)
+*/
+
+/*-------------------------------- User action pseudo-classes -------------------------------*/
+/* Specificity pseudo class = 10 */
+/* Cannot be selected via JS. Not part of DOM */
+/* :hover works on almost all elements except for non-rendered elements/invisible elements */
+.btn:hover,
+.input:hover {
+  background-color: var(--color-6); /* orange */
+}
+/* Quiz: What do you think will happen if I do *:hover? */
+
+/* When an interactive element receives focus via mouse click or via tab
+As long as the element receives the focus */
+.btn:focus,
+.input:focus {
+  background-color: var(--color-4); /* green */
+}
+
+/* :active is when the element is being clicked */
+/* As long as the mouse is held down */
+.btn:active,
+.input:active {
+  background-color: var(--color-5); /* purple */
+}
+/* Quiz: What do you think will happen if I do *:active? */
+
+/* RRC: yellow */
+/* .btn:focus-visible,
+.input:focus-visible {
+  background-color: var(--color-2); 
+} */
+
+/* Highlights the parent when any it or any of its descendent receives focus */
+/* Use case 1: Highlighting a form to show where the interaction is 
+taking place reduce visual cognitive, good accessibility */
+.form:focus-within {
+  border: var(--border-width-1) solid var(--color-3); /* red */
+}
+
+/* Use case 2: Label can have a different styling in a form */
+label:focus-within {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Use case 3: Clicking on a cell, highlights the entire row */
+tr:focus-within {
+  background-color: var(--color-2); /* yellow */
+  cursor: pointer;
+}
+/* Quiz: What would happen if I do tr:focus? */
+
+/*RRC: difference betwee :focus, :focus-within, :focus-visible ? and use cases? */
+
+/* Quiz: Do you think pseudo classes like :link, :visited will work on <div>? what about <button>?*/
+/*-------------------------------------------------------------------------------------------*/

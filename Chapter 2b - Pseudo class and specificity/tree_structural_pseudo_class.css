@@ -1,0 +1,51 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
+   Tree-structural pseudo-classes (These pseudo-classes relate to the location of an 
+   element within the document tree.)
+        :root - refers to html
+        :empty (RRC todo)
+        :nth-child()
+        :first-child
+        :last-child
+        :last-of-type (RRC todo)
+        :nth-of-type() (RRC todo)
+*/
+
+/*------------------------------ Tree structural pseudo-classes -----------------------------*/
+/* :empty selects elements with no children, or text within */
+.api-data:empty::before {
+  content: "No data yet";
+}
+
+/* Selects the first child element/descendant element of its parent 
+Selects the first li of ul */
+li:first-child {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Selects the last child element/descendant element of its parent. 
+Selects the last li of ul */
+li:last-child {
+  font-style: italic;
+}
+
+/*Quiz: which <p> in .container gets styled? */
+/* .container p:last-child {
+  font-style: italic;
+} */
+
+/* Quiz: what happens here? */
+/* .container > p:last-child {
+  font-style: italic;
+} */
+
+/* n=0 2nd child is selected, n=1 3rd child is selected, n=2 4th child is selected*/
+
+li:nth-child(n + 2) {
+  color: var(--color-6); /* orange*/
+}
+
+/* Quiz: what happens here? */
+/* li:nth-child(-n + 3) {
+  border: var(--border-width-1) solid var(--color-6); 
+} */
+/*-------------------------------------------------------------------------------------------*/

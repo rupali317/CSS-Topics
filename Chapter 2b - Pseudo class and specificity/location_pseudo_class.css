@@ -1,0 +1,23 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
+Location pseudo-classes (related to links)
+        :link
+        :visited
+*/
+
+/*--------------------------------- Location pseudo-classes ---------------------------------*/
+div:link {
+  color: var(--color-6); /* orange */
+}
+
+div:visited {
+  color: var(--color-4); /* green */
+}
+
+a:hover {
+  color: var(--color-1); /* blue */
+}
+
+a:active {
+  color: var(--color-7); /* gray */
+}
+/*-------------------------------------------------------------------------------------------*/

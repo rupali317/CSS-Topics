@@ -1,0 +1,50 @@
+:root {
+  /* Colors */
+  --color-1: blue;
+  --color-2: yellow;
+  --color-3: red;
+  --color-4: green;
+  --color-5: purple;
+  --color-6: orange;
+  --color-7: gray;
+  --color-8: black;
+
+  /* Font family */
+  --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+
+  /* Font size */
+  --font-size-1: 2em;
+  --font-size-2: 3em;
+  --font-size-4: 4em;
+
+  /* Font weight */
+  --font-weight-bold: bold;
+
+  /* Border width */
+  --border-width-1: 0.125rem;
+
+  /* Border radius */
+  --border-radius-1: 1rem;
+
+  /* Spacing */
+  --space-1: 1rem;
+}
+
+/* ------------------------Helper classes ---------------------------*/
+.hidden {
+  display: none;
+}
+
+table {
+  border: var(--border-width-1) solid var(--color-8);
+  border-spacing: 0;
+  cursor: pointer;
+}
+
+td,
+th {
+  border: var(--border-width-1) solid var(--color-8);
+  padding: var(--space-1);
+}
+/* ------------------------------------------------------------------*/
