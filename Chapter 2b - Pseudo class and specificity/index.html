@@ -25,22 +25,82 @@
       Pseudo elements: creates a virtual element to style specific part of HTML
       Pseudo class: does not create new elements, modifies the state of element or filters
      -->
-    <section>
-      <h2>Pseudo-Classes</h2>
-
-      <!-- User action -->
+    <!-- User action -->
+    <h2>1. Form</h2>
+    <form class="form">
       <button class="btn">Hover over me</button>
       <button class="btn hidden">Hover over me</button>
       <input class="input" type="text" />
       <a href="#">I am a link</a>
       <div>Just a generic div</div>
+    </form>
 
-      <!-- Tree structural -->
-      <ul>
-        <li>First child</li>
-        <li>Second child</li>
-        <li>Third child</li>
-      </ul>
-    </section>
+    <h2>2. Labels and inputs</h2>
+    <label
+      >Full name
+      <input type="text" />
+    </label>
+    <label
+      >Age
+      <input type="number" max="120" min="0" />
+    </label>
+
+    <h2>3. Table 1</h2>
+    <table>
+      <thead>
+        <th></th>
+        <th>ID</th>
+        <th>Employee</th>
+        <th>Location</th>
+        <th>Sprint board</th>
+      </thead>
+      <tbody>
+        <tr tabindex="0">
+          <td><input type="checkbox" /></td>
+          <td>1</td>
+          <td>Andre</td>
+          <td>Portugal</td>
+          <td>EU</td>
+        </tr>
+        <tr tabindex="0">
+          <td><input type="checkbox" /></td>
+          <td>2</td>
+          <td>Bernardo</td>
+          <td>Netherlands</td>
+          <td>EU</td>
+        </tr>
+        <tr tabindex="0">
+          <td><input type="checkbox" /></td>
+          <td>3</td>
+          <td>Dimitri</td>
+          <td>Netherlands</td>
+          <td>EU</td>
+        </tr>
+        <tr tabindex="0">
+          <td><input type="checkbox" /></td>
+          <td>4</td>
+          <td>Renato</td>
+          <td>Portugal</td>
+          <td>EU</td>
+        </tr>
+        <tr tabindex="0">
+          <td><input type="checkbox" /></td>
+          <td>5</td>
+          <td>Rupali</td>
+          <td>Singapore</td>
+          <td>APAC</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Tree structural -->
+    <ul>
+      <li>First child</li>
+      <li>Second child</li>
+      <li>Third child</li>
+      <li>Fourth child</li>
+      <li>Fifth child</li>
+      <li>Sixth child</li>
+    </ul>
   </body>
 </html>

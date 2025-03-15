@@ -58,13 +58,26 @@
     based on HTML attributes and the state that the field is in before and after interaction.)
         :checked
         :disabled
-  
-    ::-webkit-scrollbar:vertical
   */
 
+/* Start - Helper classes*/
 .hidden {
   display: none;
 }
+
+table {
+  border: var(--border-width-1) solid var(--color-8);
+  border-spacing: 0;
+  cursor: pointer;
+}
+
+td,
+th {
+  border: var(--border-width-1) solid var(--color-8);
+  padding: var(--space-1);
+}
+
+/* End - Helper classes*/
 
 /*-------------------------------- User action pseudo-classes -------------------------------*/
 /* Specificity pseudo class = 10 */
@@ -91,18 +104,30 @@ As long as the element receives the focus */
 }
 /* Quiz: What do you think will happen if I do *:active? */
 
-/* yellow */
+/* RRC: yellow */
 /* .btn:focus-visible,
 .input:focus-visible {
   background-color: var(--color-2); 
 } */
 
-/* red */
-/* RRC focus-within takes priority over active. */
-/* .btn:focus-within,
-.input:focus-within {
-  background-color: var(--color-3);
-} */
+/* Highlights the parent when any it or any of its descendent receives focus */
+/* Use case 1: Highlighting a form to show where the interaction is 
+taking place reduce visual cognitive, good accessibility */
+.form:focus-within {
+  border: var(--border-width-1) solid var(--color-3); /* red */
+}
+
+/* Use case 2: Label can have a different styling in a form */
+label:focus-within {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Use case 3: Clicking on a cell, highlights the entire row */
+tr:focus-within {
+  background-color: var(--color-2);
+  cursor: pointer;
+}
+/* Quiz: What would happen if I do tr:focus? */
 
 /*RRC: difference betwee :focus, :focus-within, :focus-visible ? and use cases? */
 div:link {
@@ -127,13 +152,19 @@ a:active {
 /*-------------------------------------------------------------------------------------------*/
 
 /*------------------------------ Tree structural pseudo-classes -----------------------------*/
+/* Selects the first child element of its parent 
+Selects the first li of ul */
 ul li:first-child {
   font-weight: var(--font-weight-bold);
 }
+
+/* Selects the last child element of its parent. 
+Selects the last li of ul */
 ul li:last-child {
   font-style: italic;
 }
 /*-------------------------------------------------------------------------------------------*/
 
 /*---------------------------------- Input pseudo-classes -----------------------------------*/
+/* RRC: Does input checkbox not have focus state?*/
 /*-------------------------------------------------------------------------------------------*/
