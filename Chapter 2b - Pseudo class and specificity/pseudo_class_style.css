@@ -74,26 +74,32 @@
 .input:hover {
   background-color: var(--color-6); /* orange */
 }
-
 /* Quiz: What do you think will happen if I do *:hover? */
 
-/* RRC focus-within takes priority over active. */
+/* :active is when the element is being clicked */
 .btn:active,
 .input:active {
   background-color: var(--color-5); /* purple */
 }
-.btn:focus, /* .btn:focus-visible over :focus */
+/* Quiz: What do you think will happen if I do *:active? */
+
+/* .btn:focus-visible over :focus */
+/* green */
+/*.btn:focus,
 .input:focus {
-  background-color: var(--color-4); /* green */
-}
-.btn:focus-within,
+  background-color: var(--color-4);
+}*/
+/* red */
+/* RRC focus-within takes priority over active. */
+/*.btn:focus-within,
 .input:focus-within {
-  background-color: var(--color-3); /* red */
-}
-.btn:focus-visible,
+  background-color: var(--color-3);
+}*/
+/* yellow */
+/*.btn:focus-visible,
 .input:focus-visible {
-  background-color: var(--color-2); /* yellow */
-}
+  background-color: var(--color-2);
+}*/
 /*RRC: difference betwee :focus, :focus-within, :focus-visible ? and use cases? */
 div:link {
   color: var(--color-6); /* orange */
@@ -108,7 +114,7 @@ a:hover {
 }
 
 a:active {
-  color: var(--color-5); /* purple */
+  color: var(--color-7); /* gray */
 }
 /* Quiz: Do you think pseudo classes like :link, :visited will work on <div>? what about <button>?*/
 /*-------------------------------------------------------------------------------------------*/
