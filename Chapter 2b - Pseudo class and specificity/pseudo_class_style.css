@@ -76,30 +76,34 @@
 }
 /* Quiz: What do you think will happen if I do *:hover? */
 
+/* When an interactive element receives focus via mouse click or via tab
+As long as the element receives the focus */
+.btn:focus,
+.input:focus {
+  background-color: var(--color-4); /* green */
+}
+
 /* :active is when the element is being clicked */
+/* As long as the mouse is held down */
 .btn:active,
 .input:active {
   background-color: var(--color-5); /* purple */
 }
 /* Quiz: What do you think will happen if I do *:active? */
 
-/* .btn:focus-visible over :focus */
-/* green */
-/*.btn:focus,
-.input:focus {
-  background-color: var(--color-4);
-}*/
+/* yellow */
+/* .btn:focus-visible,
+.input:focus-visible {
+  background-color: var(--color-2); 
+} */
+
 /* red */
 /* RRC focus-within takes priority over active. */
-/*.btn:focus-within,
+/* .btn:focus-within,
 .input:focus-within {
   background-color: var(--color-3);
-}*/
-/* yellow */
-/*.btn:focus-visible,
-.input:focus-visible {
-  background-color: var(--color-2);
-}*/
+} */
+
 /*RRC: difference betwee :focus, :focus-within, :focus-visible ? and use cases? */
 div:link {
   color: var(--color-6); /* orange */
