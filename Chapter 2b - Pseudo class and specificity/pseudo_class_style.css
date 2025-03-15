@@ -62,12 +62,23 @@
     ::-webkit-scrollbar:vertical
   */
 
+.hidden {
+  display: none;
+}
+
 /*-------------------------------- User action pseudo-classes -------------------------------*/
+/* Specificity pseudo class = 10 */
+/* Cannot be selected via JS. Not part of DOM */
+/* :hover works on almost all elements except for non-rendered elements/invisible elements */
 .btn:hover,
 .input:hover {
   background-color: var(--color-6); /* orange */
 }
-.btn:active,  /*focus-within takes prioerity over active. RRC*/
+
+/* Quiz: What do you think will happen if I do *:hover? */
+
+/* RRC focus-within takes priority over active. */
+.btn:active,
 .input:active {
   background-color: var(--color-5); /* purple */
 }
@@ -84,6 +95,22 @@
   background-color: var(--color-2); /* yellow */
 }
 /*RRC: difference betwee :focus, :focus-within, :focus-visible ? and use cases? */
+div:link {
+  color: var(--color-6); /* orange */
+}
+
+div:visited {
+  color: var(--color-4); /* green */
+}
+
+a:hover {
+  color: var(--color-1); /* blue */
+}
+
+a:active {
+  color: var(--color-5); /* purple */
+}
+/* Quiz: Do you think pseudo classes like :link, :visited will work on <div>? what about <button>?*/
 /*-------------------------------------------------------------------------------------------*/
 
 /*-------------------------------- Functional pseudo-classes --------------------------------*/
