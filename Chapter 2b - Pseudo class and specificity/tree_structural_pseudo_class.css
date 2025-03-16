@@ -6,8 +6,8 @@
         :nth-child()
         :first-child
         :last-child
-        :last-of-type (RRC todo)
-        :nth-of-type() (RRC todo)
+        :last-of-type
+        :nth-of-type() 
 */
 
 /*------------------------------ Tree structural pseudo-classes -----------------------------*/
@@ -28,18 +28,17 @@ li:last-child {
   font-style: italic;
 }
 
-/*Quiz: which <p> in .container gets styled? */
-/* .container p:last-child {
+/*Quiz: which <p> in .container-1 gets styled? */
+/* .container-1 p:last-child {
   font-style: italic;
 } */
 
 /* Quiz: what happens here? */
-/* .container > p:last-child {
+/* .container-1 > p:last-child {
   font-style: italic;
 } */
 
 /* n=0 2nd child is selected, n=1 3rd child is selected, n=2 4th child is selected*/
-
 li:nth-child(n + 2) {
   color: var(--color-6); /* orange*/
 }
@@ -47,5 +46,25 @@ li:nth-child(n + 2) {
 /* Quiz: what happens here? */
 /* li:nth-child(-n + 3) {
   border: var(--border-width-1) solid var(--color-6); 
+} */
+
+/* Quiz: what happens here? I want to select the 2nd <p> which is a child of .container-2 */
+/* .container-2 p:nth-child(2) {
+  font-weight: var(--font-weight-bold);
+} */
+
+/* nth-child selects elements among all siblings regardless of type -> which can lead to wrong results */
+/* nth-of-type() selects elements among siblings of the same type */
+.container-2 p:nth-of-type(2) {
+  font-weight: var(--font-weight-bold);
+}
+
+/* last-of-type selects last element among siblings of the same type */
+.container-2 span:last-of-type {
+  font-style: italic;
+}
+/* Quiz: what happens here? */
+/* .container-2 span:last-child {
+  font-style: italic;
 } */
 /*-------------------------------------------------------------------------------------------*/
