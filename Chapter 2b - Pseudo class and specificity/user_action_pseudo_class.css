@@ -33,7 +33,8 @@ As long as the element receives the focus */
 }
 
 /* Note: Browsers seem to treat the :focus-visible differently for inputs and buttons. 
-In the above scenario, :focus-visible always seems to be applied for input */
+:focus, :focus-visble ordering -> button seems to treat them separately. :focus-visible seems to take priority always for input
+:focus-visble, :focus ordering -> :focus styles take priority for both button and input */
 
 /* :active is when the element is being clicked */
 /* As long as the mouse is held down */
