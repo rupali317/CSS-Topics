@@ -1,7 +1,7 @@
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
    Functional pseudo-classes
         :not() 
-        :has()  (RRC todo)  :has(textarea), :has(input[type="checkbox"]:checked), :has(.classname), :has(input[type="radio"]:checked), :has(input[type="radio"]:not(:checked))
+        :has()
 */
 
 /*-------------------------------- Functional pseudo-classes --------------------------------*/
@@ -35,6 +35,15 @@ input:not([class]) {
 /* Quiz: What will happen here?
   Hint: :not() works on real selectors */
 input:not(::placeholder) {
+  color: var(--color-3); /* red */
+}
+
+/* We go from ancestor to descendants, is it possible to do so other way around? Here comes :has() */
+tr:has(input:checked) {
+  background-color: var(--color-4); /* green */
+}
+
+label:has(+ input:hover) {
   color: var(--color-3); /* red */
 }
 /*-------------------------------------------------------------------------------------------*/
