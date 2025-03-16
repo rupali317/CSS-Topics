@@ -6,7 +6,7 @@ such as holding a mouse pointer over an element.
         :active
         :focus
         :focus-within
-        :focus-visible (RRC todo)
+        :focus-visible
 */
 
 /*-------------------------------- User action pseudo-classes -------------------------------*/
@@ -19,12 +19,21 @@ such as holding a mouse pointer over an element.
 }
 /* Quiz: What do you think will happen if I do *:hover? */
 
-/* When an interactive element receives focus via mouse click or via tab
+/* When an interactive element receives focus via mouse click or via keyboard 
 As long as the element receives the focus */
 .btn:focus,
 .input:focus {
   background-color: var(--color-4); /* green */
 }
+
+/* focus via keyboard */
+.btn:focus-visible,
+.input:focus-visible {
+  background-color: var(--color-2); /* yellow */
+}
+
+/* Note: Browsers seem to treat the :focus-visible differently for inputs and buttons. 
+In the above scenario, :focus-visible always seems to be applied for input */
 
 /* :active is when the element is being clicked */
 /* As long as the mouse is held down */
@@ -33,12 +42,6 @@ As long as the element receives the focus */
   background-color: var(--color-5); /* purple */
 }
 /* Quiz: What do you think will happen if I do *:active? */
-
-/* RRC: yellow */
-/* .btn:focus-visible,
-.input:focus-visible {
-  background-color: var(--color-2); 
-} */
 
 /* Highlights the parent when any it or any of its descendent receives focus */
 /* Use case 1: Highlighting a form to show where the interaction is 
@@ -58,8 +61,6 @@ tr:focus-within {
   cursor: pointer;
 }
 /* Quiz: What would happen if I do tr:focus? */
-
-/*RRC: difference betwee :focus, :focus-within, :focus-visible ? and use cases? */
 
 /* Quiz: Do you think pseudo classes like :link, :visited will work on <div>? what about <button>?*/
 /*-------------------------------------------------------------------------------------------*/
