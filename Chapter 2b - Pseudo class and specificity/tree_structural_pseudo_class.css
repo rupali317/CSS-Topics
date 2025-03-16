@@ -2,7 +2,7 @@
    Tree-structural pseudo-classes (These pseudo-classes relate to the location of an 
    element within the document tree.)
         :root - refers to html
-        :empty (RRC todo)
+        :empty
         :nth-child()
         :first-child
         :last-child
@@ -14,6 +14,13 @@
 /* :empty selects elements with no children, or text within */
 .api-data:empty::before {
   content: "No data yet";
+  color: var(--color-7); /* gray */
+  font-style: italic;
+}
+
+/* Observe the actual height and width of it without :empty and with :empty */
+.error-message:empty {
+  display: none;
 }
 
 /* Selects the first child element/descendant element of its parent 
