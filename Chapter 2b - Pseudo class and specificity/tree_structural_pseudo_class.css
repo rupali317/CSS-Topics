@@ -67,4 +67,10 @@ li:nth-child(n + 2) {
 /* .container-2 span:last-child {
   font-style: italic;
 } */
+
+/* Quiz: what happens here? 
+Can nth-child(), nth-of-type(), last-child, :last-of-type need a selector? or can they exist independently? */
+/* .container-2 :last-of-type {
+  font-size: var(--font-size-1);
+} */
 /*-------------------------------------------------------------------------------------------*/
