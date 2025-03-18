@@ -19,14 +19,16 @@ such as holding a mouse pointer over an element.
 }
 /* Quiz: What do you think will happen if I do *:hover? */
 
-/* When an interactive element receives focus via mouse click or via keyboard 
+/*
+When an interactive element receives focus via mouse click or via keyboard 
 As long as the element receives the focus */
 .btn:focus,
 .input:focus {
   background-color: var(--color-4); /* green */
 }
 
-/* focus via keyboard */
+/* EXPLAIN THIS AT THE END 
+focus via keyboard -> explain why this was introduced? */
 .btn:focus-visible,
 .input:focus-visible {
   background-color: var(--color-2); /* yellow */
@@ -42,7 +44,6 @@ As long as the element receives the focus */
 .input:active {
   background-color: var(--color-5); /* purple */
 }
-/* Quiz: What do you think will happen if I do *:active? */
 
 /* Highlights the parent when any it or any of its descendent receives focus */
 /* Use case 1: Highlighting a form to show where the interaction is 
@@ -62,6 +63,4 @@ tr:focus-within {
   cursor: pointer;
 }
 /* Quiz: What would happen if I do tr:focus? */
-
-/* Quiz: Do you think pseudo classes like :link, :visited will work on <div>? what about <button>?*/
 /*-------------------------------------------------------------------------------------------*/

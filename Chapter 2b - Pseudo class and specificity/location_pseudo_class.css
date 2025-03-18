@@ -20,4 +20,5 @@ a:hover {
 a:active {
   color: var(--color-7); /* gray */
 }
+/* Quiz: Do you think pseudo classes like :link, :visited will work on <div>? what about <button>?*/
 /*-------------------------------------------------------------------------------------------*/

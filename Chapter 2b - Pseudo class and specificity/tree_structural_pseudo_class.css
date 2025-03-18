@@ -18,7 +18,7 @@
   font-style: italic;
 }
 
-/* Observe the actual height and width of it without :empty and with :empty */
+/* Show an instance where we use it on our code. Observe the actual height and width of it without :empty and with :empty. */
 .error-message:empty {
   display: none;
 }
@@ -43,7 +43,7 @@ li:last-child {
 /* Quiz: what happens here? */
 /* .container-1 > p:last-child {
   font-style: italic;
-} */
+} ???? */
 
 /* n=0 2nd child is selected, n=1 3rd child is selected, n=2 4th child is selected*/
 li:nth-child(n + 2) {
@@ -58,7 +58,7 @@ li:nth-child(n + 2) {
 /* Quiz: what happens here? I want to select the 2nd <p> which is a child of .container-2 */
 /* .container-2 p:nth-child(2) {
   font-weight: var(--font-weight-bold);
-} */
+} ??? */
 
 /* nth-child selects elements among all siblings regardless of type -> which can lead to wrong results */
 /* nth-of-type() selects elements among siblings of the same type */

@@ -5,21 +5,21 @@
 */
 
 /*-------------------------------- Functional pseudo-classes --------------------------------*/
-/* not() matches any elements that are not part of the selectors */
+/* :not() matches any elements that are not part of the selectors */
 section {
   padding: var(--space-1);
   border-bottom: var(--border-width-1) solid var(--color-7);
 }
-/* 
-  section:last-child {
-    border-bottom: none;
-  } */
-/* Below is a shortcut*/
+
+/* section:last-child {
+  border-bottom: none;
+} */
+/* Below is a shortcut REMEMBER TO COMMENT OUT THE PREVIOUS TWO*/
 /* :not() does not have a specificty. Whatever selector is part of the not raguments will have the specificity */
 /* section:not(:last-child) {
-    padding: var(--space-1);
-    border-bottom: var(--border-width-1) solid var(--color-7);
-  } */
+  padding: var(--space-1);
+  border-bottom: var(--border-width-1) solid var(--color-7);
+} */
 
 /* :not(<complex-selector-list>), supports nesting */
 /* <complex-selector-list> = class selctors, attribute selector, pseudo class*/
