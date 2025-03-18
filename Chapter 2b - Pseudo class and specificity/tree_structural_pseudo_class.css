@@ -38,12 +38,14 @@ li:last-child {
 /*Quiz: which <p> in .container-1 gets styled? */
 /* .container-1 p:last-child {
   font-style: italic;
+  color: var(--color-3);
 } */
 
-/* Quiz: what happens here? */
-/* .container-1 > p:last-child {
+/* Quiz: what happens here? what is the last direct child of container-1? */
+.container-1 > p:last-child {
   font-style: italic;
-} ???? */
+  color: var(--color-3); /* red */
+}
 
 /* n=0 2nd child is selected, n=1 3rd child is selected, n=2 4th child is selected*/
 li:nth-child(n + 2) {
@@ -56,15 +58,15 @@ li:nth-child(n + 2) {
 } */
 
 /* Quiz: what happens here? I want to select the 2nd <p> which is a child of .container-2 */
-/* .container-2 p:nth-child(2) {
+.container-2 p:nth-child(2) {
   font-weight: var(--font-weight-bold);
-} ??? */
+}
 
 /* nth-child selects elements among all siblings regardless of type -> which can lead to wrong results */
 /* nth-of-type() selects elements among siblings of the same type */
-.container-2 p:nth-of-type(2) {
+/* .container-2 p:nth-of-type(2) {
   font-weight: var(--font-weight-bold);
-}
+} */
 
 /* last-of-type selects last element among siblings of the same type */
 .container-2 span:last-of-type {
