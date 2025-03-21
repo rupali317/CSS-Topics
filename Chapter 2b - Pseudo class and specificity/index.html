@@ -89,7 +89,7 @@
             <td>Netherlands</td>
             <td>EU</td>
           </tr>
-          <tr tabindex="0"></tr>
+          <tr tabindex="0">
             <td><input type="checkbox" /></td>
             <td>3</td>
             <td>Binh</td>
@@ -103,14 +103,14 @@
             <td>Netherlands</td>
             <td>EU</td>
           </tr>
-          <tr tabindex="0"></tr>
+          <tr tabindex="0">
             <td><input type="checkbox" /></td>
             <td>5</td>
             <td>Iezam</td>
             <td>Singapore</td>
             <td>APAC</td>
           </tr>
-          <tr tabindex="0"></tr>
+          <tr tabindex="0">
             <td><input type="checkbox" /></td>
             <td>6</td>
             <td>Nadzir</td>
@@ -184,21 +184,43 @@
     <section>
       <h2>6. Section 6</h2>
       <form>
+        <h3>Select a column</h3>
         <div>
-          <input type="checkbox" id="option-one" checked /><label for="option-one"
-            >Option 1</label
-          >
+          <input type="checkbox" id="option-one" checked />
+          <label for="option-one">Column 1</label>
         </div>
         <div>
-          <input type="checkbox" id="option-two" disabled /><label for="option-two"
-            >Option 2</label
-          >
+          <input type="checkbox" id="option-two" disabled />
+          <label for="option-two">Column 2</label>
         </div>
         <div>
-          <input type="checkbox" id="option-three" /><label for="option-three"
-            >Option 3</label
-          >
+          <input type="checkbox" id="option-three" checked disabled />
+          <label for="option-three">Column 3</label>
         </div>
+        <div>
+          <input type="checkbox" id="option-four" />
+          <label for="option-four">Column 4</label>
+        </div>
+        <h3>Select 1 option</h3>
+        <div>
+          <div>
+            <input type="radio" id="option-one" checked name="question-1" />
+            <label for="option-one">Option 1</label>
+          </div>
+          <div>
+            <input type="radio" id="option-two" name="question-1" />
+            <label for="option-two">Option 2</label>
+          </div>
+          <div>
+            <input type="radio" id="option-three" name="question-1" />
+            <label for="option-three">Option 3</label>
+          </div>
+          <div>
+            <input type="radio" id="option-four" name="question-1" />
+            <label for="option-three">Option 4</label>
+          </div>
+        </div>
+        <h3>Inputs</h3>
         <input type="input" />
         <input type="input" disabled />
       </form>
