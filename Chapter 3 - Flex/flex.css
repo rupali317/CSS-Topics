@@ -1,0 +1,126 @@
+/*
+2️⃣ Controlling Alignment & Spacing
+✅ justify-content – Aligns items along the main axis (left, center, right, space-between, etc.).
+✅ align-items – Aligns items along the cross axis (top, center, stretch, baseline).
+✅ align-self – Adjusts alignment for a single item in a flex container.
+✅ align-content – Controls alignment when there are multiple rows/columns.
+
+3️⃣ Controlling Item Sizing
+✅ flex-grow – Defines how items expand to fill available space.
+✅ flex-shrink – Defines how items shrink when space is limited.
+✅ flex-basis – Controls the default size of an item before it grows/shrinks.
+✅ flex (shorthand) – Combines flex-grow, flex-shrink, and flex-basis.
+✅ order – Changes the order of flex items without altering HTML.
+*/
+
+:root {
+  /* Colors */
+  --color-1: black;
+  --color-2: white;
+  --color-3: red;
+  --color-4: blue;
+  --color-5: gray;
+
+  /* Font family */
+  --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+
+  /* Font size */
+  --font-size-1: 2em;
+
+  /* Font weight */
+  --font-bold: 700;
+
+  /* Border width */
+  --border-width-1: 0.125rem;
+  --border-width-2: 0.25rem;
+
+  /* Border radius */
+  --border-radius-1: 0rem;
+  --border-radius-2: 1rem;
+
+  /* Spacing */
+  --space-1: 1rem;
+  --space-2: 2rem;
+}
+
+/*---------------- Start - Helper classes ----------------*/
+* {
+  box-sizing: border-box;
+}
+
+.parent {
+  border: var(--border-width-1) solid var(--color-3);
+  padding: var(--space-2);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.child {
+  border: var(--border-width-1) solid var(--color-4);
+}
+
+/* section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+} */
+
+/*----------------- End - Helper classes -----------------*/
+/* Explain the concept of main axis, cross axis is perpendicular to main axis
+flex-direction = row -> main axis left to right
+flex-direction = row-reverse -> main axis right to left
+flex-direction = column -> main axis top to bottom
+flex-direction = column-reverse -> main axis bottom to top */
+/* Default behaviour, demo what happens when direction is reveversed for row */
+.parent:nth-child(1) {
+  display: flex;
+  gap: var(--space-1);
+  /* justify-content: flex-start; */ /* Demo this later */
+}
+
+/* Demo what happens when direction is reveversed for column */
+.parent:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.parent:nth-child(3) {
+  display: inline-flex;
+  gap: var(--space-1);
+}
+
+.parent:nth-child(4) {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.parent:nth-child(5) {
+  display: flex;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+}
+
+.parent:nth-child(6) {
+  display: flex;
+  gap: var(--space-1);
+  flex-wrap: nowrap;
+}
+
+.parent:nth-child(7) {
+  display: flex;
+  height: 300px;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+}
+
+.parent:nth-child(8) {
+  display: flex;
+  height: 300px;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex-wrap: nowrap;
+}
