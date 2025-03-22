@@ -1,12 +1,55 @@
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes 
    Input pseudo-classes (These pseudo-classes relate to form elements, and enable selecting elements 
     based on HTML attributes and the state that the field is in before and after interaction.)
-        :checked (RRC todo)
-        :disabled (RRC todo)
+        :checked
+        :disabled 
+        :required (not using it yet)
 
-        NOT USED IN OUR PROJECT YET:
-        (RRC todo) - check more
 */
 /*---------------------------------- Input pseudo-classes -----------------------------------*/
 /* RRC: Expriment input checkbox's :checked and :focus state?*/
 /*-------------------------------------------------------------------------------------------*/
+.input-2 {
+  width: var(--space-4);
+  height: var(--space-4);
+  border: var(--border-width-1) solid var(--color-1); /* blue */
+}
+
+.input-2[type="radio"] {
+  border-radius: var(--border-radius-2);
+}
+
+.input-2:checked {
+  background-color: var(--color-1); /* blue */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-2:checked::after {
+  content: "✔";
+  font-size: var(--font-size-3);
+  color: var(--color-9); /* white */
+}
+
+.input-2:disabled {
+  background-color: var(--color-7); /* gray */
+  border: var(--border-width-1) solid var(--color-8); /* black */
+}
+
+/* Quiz: How would you style the input text - default and disabled state? */
+
+/* Quiz: What happens here? */
+/* .input-2::before,
+.input-3::before {
+  content: "✔";
+  color: var(--color-3);
+} */
+
+/* Explain :required */
+/* Quiz: Which one works? label::after:has(+ input:required) OR label:has(+ input:required)::after */
+/* label::after:has(+ input:required),
+label:has(+ input:required)::after {
+  content: "*";
+  color: var(--color-3);
+} */

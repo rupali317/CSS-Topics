@@ -8,6 +8,7 @@
   --color-6: orange;
   --color-7: gray;
   --color-8: black;
+  --color-9: white;
 
   /* Font family */
   --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
@@ -16,6 +17,7 @@
   /* Font size */
   --font-size-1: 2em;
   --font-size-2: 3em;
+  --font-size-3: 0.5rem;
   --font-size-4: 4em;
 
   /* Font weight */
@@ -23,18 +25,26 @@
 
   /* Border width */
   --border-width-1: 0.125rem;
+  --border-width-2: 0.25rem;
 
   /* Border radius */
   --border-radius-1: 1rem;
+  --border-radius-2: 100%;
 
   /* Spacing */
   --space-1: 1rem;
-  --space-1: 2rem;
+  --space-2: 2rem;
+  --space-3: 0.5rem;
+  --space-4: 0.8125rem;
 }
 
 /* ------------------------Helper classes ---------------------------*/
 .hidden {
   display: none;
+}
+
+input {
+  appearance: none;
 }
 
 table {
@@ -57,4 +67,36 @@ th {
 .error-message {
   color: var(--color-3); /* red */
 }
+
+div:has(.input-2) {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.link,
+.div-link {
+  color: var(--color-6);
+  font-weight: var(--font-weight-bold);
+}
+
+/*------------------------------------*/
+a.link:hover {
+  color: var(--color-6);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.link:hover span {
+  text-decoration: underline;
+}
+/*------------------------------------*/
+
+/*------------------------------------*/
+/* a i:has(+ span:hover) */
+/* a span:has(+ i:hover) */
+div.div-link span:hover {
+  text-decoration: underline;
+}
+/*------------------------------------*/
+
 /* ------------------------------------------------------------------*/

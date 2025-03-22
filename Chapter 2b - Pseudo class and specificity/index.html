@@ -39,7 +39,7 @@
       Pseudo class: does not create new elements, modifies the state of element or filters
      -->
     <!-- User action -->
-    <section>
+    <section id="section-one">
       <h2>1. Section 1</h2>
       <form class="form">
         <button class="btn">Hover over me</button>
@@ -50,7 +50,7 @@
       </form>
     </section>
 
-    <section>
+    <section id="section-two">
       <h2>2. Section 2</h2>
       <label
         >Full name
@@ -64,7 +64,7 @@
       <input type="date" />
     </section>
 
-    <section>
+    <section id="section-three">
       <h2>3. Section 3</h2>
       <table>
         <thead>
@@ -135,14 +135,14 @@
       </table>
     </section>
 
-    <section>
+    <section id="section-four">
       <h2>4. Section 4</h2>
       <input type="text" placeholder="placeholder 1" class="input-1" />
       <input type="text" placeholder="placeholder 2" />
     </section>
 
     <!-- Tree structural -->
-    <section>
+    <section id="section-five">
       <h2>5. Section 5</h2>
       <div class="api-data"></div>
       <div class="api-data">
@@ -181,49 +181,90 @@
         <p>I am a paragraph - 3rd paragraph</p>
       </div>
     </section>
-    <section>
+    <section id="section-six">
       <h2>6. Section 6</h2>
       <form>
         <h3>Select a column</h3>
         <div>
-          <input type="checkbox" id="option-one" checked />
+          <input class="input-2" type="checkbox" id="option-one" checked />
           <label for="option-one">Column 1</label>
         </div>
         <div>
-          <input type="checkbox" id="option-two" disabled />
+          <input class="input-2" type="checkbox" id="option-two" disabled />
           <label for="option-two">Column 2</label>
         </div>
         <div>
-          <input type="checkbox" id="option-three" checked disabled />
+          <input
+            class="input-2"
+            type="checkbox"
+            id="option-three"
+            checked
+            disabled
+          />
           <label for="option-three">Column 3</label>
         </div>
         <div>
-          <input type="checkbox" id="option-four" />
+          <input class="input-2" type="checkbox" id="option-four" />
           <label for="option-four">Column 4</label>
         </div>
         <h3>Select 1 option</h3>
         <div>
           <div>
-            <input type="radio" id="option-one" checked name="question-1" />
+            <input
+              type="radio"
+              class="input-2"
+              id="option-one"
+              checked
+              name="question-1"
+            />
             <label for="option-one">Option 1</label>
           </div>
           <div>
-            <input type="radio" id="option-two" name="question-1" />
+            <input
+              type="radio"
+              class="input-2"
+              id="option-two"
+              disabled
+              name="question-1"
+            />
             <label for="option-two">Option 2</label>
           </div>
           <div>
-            <input type="radio" id="option-three" name="question-1" />
+            <input
+              type="radio"
+              class="input-2"
+              id="option-three"
+              name="question-1"
+            />
             <label for="option-three">Option 3</label>
           </div>
           <div>
-            <input type="radio" id="option-four" name="question-1" />
+            <input
+              type="radio"
+              class="input-2"
+              id="option-four"
+              name="question-1"
+            />
             <label for="option-three">Option 4</label>
           </div>
         </div>
         <h3>Inputs</h3>
-        <input type="input" />
-        <input type="input" disabled />
+        <label>Label 1</label>
+        <input class="input-3" type="text" required />
+        <label>Label 2</label>
+        <input class="input-3" type="text" disabled />
       </form>
     </section>
+    <!-- <section id="section-misc">
+      <h2>Misc experiments</h2>
+      <a class="link">
+        <i>I am an icon</i>
+        <span>I am a text</span>
+      </a>
+      <div class="div-link">
+        <i>I am an icon</i>
+        <span>I am a text</span>
+      </div>
+    </section> -->
   </body>
 </html>
