@@ -1,0 +1,12 @@
+/*
+Controlling Alignment & Spacing
+- align-self – Adjusts alignment for a single item in a flex container.
+- align-content – Controls alignment when there are multiple rows/columns.
+
+Controlling Item Sizing
+- flex-grow – Defines how items expand to fill available space.
+- flex-shrink – Defines how items shrink when space is limited.
+- flex-basis – Controls the default size of an item before it grows/shrinks.
+- flex (shorthand) – Combines flex-grow, flex-shrink, and flex-basis.
+- order – Changes the order of flex items without altering HTML.
+*/

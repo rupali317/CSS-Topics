@@ -1,16 +1,12 @@
 /*
-2️⃣ Controlling Alignment & Spacing
-✅ justify-content – Aligns items along the main axis (left, center, right, space-between, etc.).
-✅ align-items – Aligns items along the cross axis (top, center, stretch, baseline).
-✅ align-self – Adjusts alignment for a single item in a flex container.
-✅ align-content – Controls alignment when there are multiple rows/columns.
+Basic Flexbox Properties
+- display: flex; & display: inline-flex; – Enables flexbox on a container.
+- flex-direction – Controls the main axis (row, column, row-reverse, column-reverse).
+- flex-wrap – Allows items to wrap onto new lines (wrap, nowrap, wrap-reverse).
 
-3️⃣ Controlling Item Sizing
-✅ flex-grow – Defines how items expand to fill available space.
-✅ flex-shrink – Defines how items shrink when space is limited.
-✅ flex-basis – Controls the default size of an item before it grows/shrinks.
-✅ flex (shorthand) – Combines flex-grow, flex-shrink, and flex-basis.
-✅ order – Changes the order of flex items without altering HTML.
+Controlling Alignment & Spacing
+- justify-content – Aligns items along the main axis (left, center, right, space-between, etc.).
+- align-items – Aligns items along the cross axis (top, center, stretch, baseline).
 */
 
 :root {
@@ -42,6 +38,7 @@
   /* Spacing */
   --space-1: 1rem;
   --space-2: 2rem;
+  --space-3: 20rem;
 }
 
 /*---------------- Start - Helper classes ----------------*/
@@ -64,6 +61,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+  align-items: flex-start;
 } */
 
 /*----------------- End - Helper classes -----------------*/
@@ -74,16 +72,21 @@ flex-direction = column -> main axis top to bottom
 flex-direction = column-reverse -> main axis bottom to top */
 /* Default behaviour, demo what happens when direction is reveversed for row */
 .parent:nth-child(1) {
+  height: var(--space-3);
   display: flex;
   gap: var(--space-1);
+  /* align-items: flex-start; */ /* Demo this later */
   /* justify-content: flex-start; */ /* Demo this later */
 }
 
 /* Demo what happens when direction is reveversed for column */
 .parent:nth-child(2) {
+  height: var(--space-3);
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
+  /* justify-content: center; */ /* Demo this later */
+  /* align-items: flex-end; */ /* Demo this later */
 }
 
 .parent:nth-child(3) {
@@ -91,6 +94,7 @@ flex-direction = column-reverse -> main axis bottom to top */
   gap: var(--space-1);
 }
 
+/* Quiz (Ask later): Do you think align-items and justify-content will work for inline-flex */
 .parent:nth-child(4) {
   display: inline-flex;
   flex-direction: column;
@@ -111,7 +115,7 @@ flex-direction = column-reverse -> main axis bottom to top */
 
 .parent:nth-child(7) {
   display: flex;
-  height: 300px;
+  height: var(--space-3);
   flex-direction: column;
   gap: var(--space-1);
   flex-wrap: wrap;
@@ -119,7 +123,7 @@ flex-direction = column-reverse -> main axis bottom to top */
 
 .parent:nth-child(8) {
   display: flex;
-  height: 300px;
+  height: var(--space-3);
   flex-direction: column;
   gap: var(--space-1);
   flex-wrap: nowrap;
