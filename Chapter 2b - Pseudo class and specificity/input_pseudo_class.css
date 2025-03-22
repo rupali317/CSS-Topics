@@ -7,8 +7,6 @@
 
 */
 /*---------------------------------- Input pseudo-classes -----------------------------------*/
-/* RRC: Expriment input checkbox's :checked and :focus state?*/
-/*-------------------------------------------------------------------------------------------*/
 .input-2 {
   width: var(--space-4);
   height: var(--space-4);
@@ -53,3 +51,20 @@ label:has(+ input:required)::after {
   content: "*";
   color: var(--color-3);
 } */
+
+/* Explain how browser tends to treat different inputs differently. Input text treated as keyboard focused elements by default 
+even a click is considered a keyboard like behaviour hence focus-visible is applied. But input radio/checkbox are mouse based
+interaction, which cannot be treated as keyboard interaction. Focus superset of focus-visible. Former overrides the latter if
+defined later. usually define focus first and then focus visible */
+input:focus {
+  background-color: var(--color-3); /* red */
+}
+input:focus-visible {
+  background-color: var(--color-4); /* green */
+}
+input:focus:checked {
+  background-color: var(--color-3); /* red */
+}
+input:focus-visible:checked {
+  background-color: var(--color-4); /* green */
+}
