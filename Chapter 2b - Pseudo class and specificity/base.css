@@ -73,30 +73,4 @@ div:has(.input-2) {
   gap: var(--space-3);
 }
 
-.link,
-.div-link {
-  color: var(--color-6);
-  font-weight: var(--font-weight-bold);
-}
-
-/*------------------------------------*/
-a.link:hover {
-  color: var(--color-6);
-  text-decoration: none;
-  cursor: pointer;
-}
-
-a.link:hover span {
-  text-decoration: underline;
-}
-/*------------------------------------*/
-
-/*------------------------------------*/
-/* a i:has(+ span:hover) */
-/* a span:has(+ i:hover) */
-div.div-link span:hover {
-  text-decoration: underline;
-}
-/*------------------------------------*/
-
 /* ------------------------------------------------------------------*/

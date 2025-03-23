@@ -1,0 +1,31 @@
+:root {
+  /* Colors */
+  --color-1: blue;
+}
+
+/*------------------------------------*/
+.div-link {
+  color: var(--color-1); /* blue */
+  font-weight: var(--font-weight-bold);
+}
+
+.div-link:hover {
+  cursor: pointer;
+  text-decoration: line-through;
+}
+
+.div-link:hover span {
+  text-decoration: underline;
+}
+
+.div-link:hover i {
+  text-decoration: overline;
+}
+
+/* a i:has(+ span:hover) */
+/* a span:has(+ i:hover) */
+/* div.div-link span:hover {
+    text-decoration: underline;
+  } */
+
+/*------------------------------------*/
