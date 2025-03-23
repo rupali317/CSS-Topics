@@ -4,6 +4,9 @@
 
   /* Font weight */
   --font-weight-bold: bold;
+
+  /* Space */
+  --space-1: 2rem;
 }
 
 /*--------------------- Start: Helper classes---------------------------------*/
@@ -11,12 +14,20 @@
 .link-2 {
   color: var(--color-1); /* blue */
   font-weight: var(--font-weight-bold); /* bold */
+  display: flex;
+  gap: var(--space-1);
+}
+
+a {
+  display: flex;
+  gap: var(--space-1);
 }
 /*----------------------- End: Helper classes---------------------------------*/
 
 /*----------------------------------------------------------------------------*/
 /* Concept of event bubbling. when children is hovered, parent is hovered
-so when i is hovered a is hovered and a:hover span takes place */
+so when i is hovered a is hovered and a:hover span takes place.
+Whenever we want to target a child and the siblings will be affected, target the parent */
 a {
   text-decoration: none;
 }
@@ -41,15 +52,18 @@ and that is why every text-decoration takes place */
   text-decoration: overline;
 }
 
+/* Another alternative to a:hover span but the drawback is that
+if you hover on the link-2 only then nothing happens */
 .link-2:hover {
   cursor: pointer;
   text-decoration: none;
 }
 
-/* a i:has(+ span:hover) */
-/* a span:has(+ i:hover) */
-/* div.div-link span:hover {
-    text-decoration: underline;
-  } */
+.link-2 span:hover {
+  text-decoration: underline;
+}
 
+.link-2 i:hover + span {
+  text-decoration: underline;
+}
 /*----------------------------------------------------------------------------*/
