@@ -1,25 +1,49 @@
 :root {
   /* Colors */
   --color-1: blue;
+
+  /* Font weight */
+  --font-weight-bold: bold;
 }
 
-/*------------------------------------*/
-.div-link {
+/*--------------------- Start: Helper classes---------------------------------*/
+.link-1,
+.link-2 {
   color: var(--color-1); /* blue */
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold); /* bold */
+}
+/*----------------------- End: Helper classes---------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+/* Concept of event bubbling. when children is hovered, parent is hovered
+so when i is hovered a is hovered and a:hover span takes place */
+a {
+  text-decoration: none;
 }
 
-.div-link:hover {
+a:hover span {
+  text-decoration: underline;
+}
+
+/* For link-1 as well when i hover over span, link-1 is hovered
+when link-1 is hovered, .link-1:hover span and .link-1:hover i take place
+and that is why every text-decoration takes place */
+.link-1:hover {
   cursor: pointer;
   text-decoration: line-through;
 }
 
-.div-link:hover span {
+.link-1:hover span {
   text-decoration: underline;
 }
 
-.div-link:hover i {
+.link-1:hover i {
   text-decoration: overline;
+}
+
+.link-2:hover {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 /* a i:has(+ span:hover) */
@@ -28,4 +52,4 @@
     text-decoration: underline;
   } */
 
-/*------------------------------------*/
+/*----------------------------------------------------------------------------*/
