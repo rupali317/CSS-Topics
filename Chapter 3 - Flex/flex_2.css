@@ -1,6 +1,5 @@
 /*
 Controlling Alignment & Spacing
-- align-self – Adjusts alignment for a single item in a flex container.
 - align-content – Controls alignment when there are multiple rows/columns.
 
 Controlling Item Sizing
@@ -64,5 +63,51 @@ Use cases: Shrink items or not shrink certain items when viewport is smaller. Yo
 .parent:nth-child(3) .child:nth-child(2n-1) {
   align-self: flex-start;
 }
+
+/* Not ordering the html, just ordering the visual.
+Order is 0 be default for all
+Use case: Desktop follows one ordering but changes in mobile version (rearrange items in different layout/screen size) */
+.parent:nth-child(4) {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.parent:nth-child(4) .child:nth-child(1) {
+  order: 3;
+}
+
+.parent:nth-child(4) .child:nth-child(2) {
+  order: 4;
+}
+
+.parent:nth-child(4) .child:nth-child(3) {
+  order: 1; /*Quiz: What happens if it is changed to order:3? How will the ordering work? */
+}
+/* Quiz: What happens if order:1 is changed to -1 and others are commented out (Explain with a real use case - shift only a sidebar to left in mobile) */
+
+.parent:nth-child(4) .child:nth-child(4) {
+  order: 2;
+}
+
+/*Comment out this*/
+/* .parent:nth-child(3) .child:nth-child(1) {
+  order: 2;
+}
+
+.parent:nth-child(3) .child:nth-child(2) {
+  order: 5;
+}
+
+.parent:nth-child(3) .child:nth-child(3) {
+  order: 4;
+}
+
+.parent:nth-child(3) .child:nth-child(4) {
+  order: 3;
+}
+
+.parent:nth-child(3) .child:nth-child(5) {
+  order: 1;
+} */
 
 /*Calculate lunch*/
