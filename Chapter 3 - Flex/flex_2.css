@@ -50,4 +50,19 @@ Use cases: Shrink items or not shrink certain items when viewport is smaller. Yo
   flex-shrink: 1;
 }
 
+/* You can align individual items along the cross axis using align-self. For all items we use align-items */
+.parent:nth-child(3) {
+  display: flex;
+  height: 200px;
+  gap: var(--space-1);
+}
+
+.parent:nth-child(3) .child:nth-child(2n) {
+  align-self: flex-end;
+}
+
+.parent:nth-child(3) .child:nth-child(2n-1) {
+  align-self: flex-start;
+}
+
 /*Calculate lunch*/
