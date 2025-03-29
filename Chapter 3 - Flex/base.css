@@ -44,6 +44,7 @@
 
 .child {
   border: var(--border-width-1) solid var(--color-4);
+  /* flex-basis: 0; */
 }
 
 /* section {
