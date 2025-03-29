@@ -6,7 +6,6 @@ Controlling Item Sizing
 
 - flex-basis – Controls the default size of an item before it grows/shrinks.
 - flex (shorthand) – Combines flex-grow, flex-shrink, and flex-basis.
-- order – Changes the order of flex items without altering HTML.
 */
 
 /* flex-grow – how much extra space a flex item takes relative to other flex items inside a flex container. 
@@ -64,7 +63,8 @@ Use cases: Shrink items or not shrink certain items when viewport is smaller. Yo
   align-self: flex-start;
 }
 
-/* Not ordering the html, just ordering the visual.
+/* order – Changes the order of flex items without altering HTML. 
+Not ordering the html, just ordering the visual.
 Order is 0 be default for all
 Use case: Desktop follows one ordering but changes in mobile version (rearrange items in different layout/screen size) */
 .parent:nth-child(4) {
@@ -110,4 +110,4 @@ Use case: Desktop follows one ordering but changes in mobile version (rearrange 
   order: 1;
 } */
 
-/*Calculate lunch*/
+/* RRC: ContractItem replica with flex instead of grid */
