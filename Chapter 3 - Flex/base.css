@@ -1,0 +1,56 @@
+:root {
+  /* Colors */
+  --color-1: black;
+  --color-2: white;
+  --color-3: red;
+  --color-4: blue;
+  --color-5: gray;
+
+  /* Font family */
+  --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+
+  /* Font size */
+  --font-size-1: 2em;
+
+  /* Font weight */
+  --font-bold: 700;
+
+  /* Border width */
+  --border-width-1: 0.125rem;
+  --border-width-2: 0.25rem;
+
+  /* Border radius */
+  --border-radius-1: 0rem;
+  --border-radius-2: 1rem;
+
+  /* Spacing */
+  --space-1: 1rem;
+  --space-2: 2rem;
+  --space-3: 20rem;
+}
+
+/*---------------- Start - Helper classes ----------------*/
+* {
+  box-sizing: border-box;
+}
+
+.parent {
+  border: var(--border-width-1) solid var(--color-3);
+  padding: var(--space-2);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.child {
+  border: var(--border-width-1) solid var(--color-4);
+}
+
+/* section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    align-items: flex-start;
+  } */
+
+/*----------------- End - Helper classes -----------------*/

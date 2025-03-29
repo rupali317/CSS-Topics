@@ -10,3 +10,16 @@ Controlling Item Sizing
 - flex (shorthand) – Combines flex-grow, flex-shrink, and flex-basis.
 - order – Changes the order of flex items without altering HTML.
 */
+
+.parent:nth-child(1) {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.parent:nth-child(1) .child:nth-child(2n) {
+  flex-grow: 2;
+}
+
+.parent:nth-child(1) .child:nth-child(2n + 1) {
+  flex-grow: 1;
+}
