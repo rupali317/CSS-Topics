@@ -22,11 +22,14 @@
   --border-radius-2: 2rem;
 
   /* Spacing */
+  --space-none: 0rem;
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 2rem;
   --space-4: 3rem;
   --space-5: 0.25rem;
+  --space-6: 6.25rem; /* 100px */
+  --space-7: 50rem; /* 800px */
 }
 
 .list {
@@ -37,7 +40,17 @@
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: var(--space-none) var(--space-2);
+  font-weight: var(--font-bold);
+}
+
+.header p:first-child {
+  flex-basis: var(--space-7);
+}
+
+.header p:not(:first-child) {
+  flex-basis: var(--space-6);
 }
 
 .item {
@@ -49,9 +62,9 @@
 }
 
 .icon {
-  width: var(--space-4);
   height: var(--space-4);
   background-color: var(--color-1);
+  flex: 0 0 var(--space-4);
 }
 
 .icon::after {
@@ -80,4 +93,10 @@
 .section-1 {
   display: flex;
   gap: var(--space-1);
+  flex-basis: var(--space-7);
+}
+
+.section-2,
+.section-3 {
+  flex-basis: var(--space-6);
 }

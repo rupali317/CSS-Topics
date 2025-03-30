@@ -9,6 +9,7 @@
   gap: var(--space-1);
 }
 
+/* RRC: difference  between align items and align content */
 /* align-content – Controls alignment when there are multiple rows/columns. */
 .parent:nth-of-type(1) {
   display: flex;
