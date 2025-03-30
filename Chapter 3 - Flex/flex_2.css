@@ -16,7 +16,6 @@
   flex-wrap: wrap;
   height: var(--space-5); /* 300px */
   align-content: center;
-  /* align-items: center; */ /* RRC: Understand the difference between align-items and align-content */
 }
 
 /* flex-grow – how much extra space a flex item takes relative to other flex items inside a flex container. 
