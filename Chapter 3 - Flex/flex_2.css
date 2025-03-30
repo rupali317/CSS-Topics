@@ -119,6 +119,4 @@ Use case: Desktop follows one ordering but changes in mobile version (rearrange 
   flex: 0 1 var(--space-4); /* 200px */
 }
 
-/* RRC: ContractItem replica with flex instead of grid */
-
 /* Tutorial: https://flexboxfroggy.com/ */

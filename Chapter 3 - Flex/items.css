@@ -1,0 +1,83 @@
+:root {
+  /* Colors */
+  --color-1: hsl(43, 93%, 56%);
+  --color-2: hsl(42, 11%, 52%);
+  --color-3: hsl(60, 6%, 6%);
+
+  /* Font family */
+  --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+
+  /* Font size */
+  --font-size-1: 2rem;
+
+  /* Font weight */
+  --font-bold: bold;
+
+  /* Border width */
+  --border-width-1: 0.25rem;
+
+  /* Border radius */
+  --border-radius-1: 0.5rem;
+  --border-radius-2: 2rem;
+
+  /* Spacing */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 3rem;
+  --space-5: 0.25rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  border: var(--border-width-1) solid var(--color-3);
+  border-radius: var(--border-radius-1);
+  padding: var(--space-2);
+}
+
+.icon {
+  width: var(--space-4);
+  height: var(--space-4);
+  background-color: var(--color-1);
+}
+
+.icon::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: "$";
+  font-size: var(--font-size-1);
+  color: white;
+}
+
+.title {
+  font-weight: var(--font-bold);
+}
+
+.subtitle {
+  color: var(--color-2);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.section-1 {
+  display: flex;
+  gap: var(--space-1);
+}
