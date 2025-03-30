@@ -1,15 +1,15 @@
 /*
-- flex-basis – Controls the default size of an item before it grows/shrinks.
 - flex (shorthand) – Combines flex-grow, flex-shrink, and flex-basis.
 */
 
 /* align-content – Controls alignment when there are multiple rows/columns. */
 .parent:nth-child(1) {
   display: flex;
-  gap: var(--space-1);
+  gap: var(--space-1); /* 16px */
   flex-wrap: wrap;
-  height: var(--space-5);
+  height: var(--space-5); /* 300px */
   align-content: center;
+  /* align-items: center; */ /* RRC: Understand the difference between align-items and align-content */
 }
 
 /* flex-grow – how much extra space a flex item takes relative to other flex items inside a flex container. 
@@ -35,12 +35,12 @@ there is no extra space then flex-basis will not apply  */
 Use cases: Shrink items or not shrink certain items when viewport is smaller. You do not want a button to shrink so much that the text starts overflowing */
 .parent:nth-child(3) {
   display: flex;
-  width: var(--space-6);
+  width: var(--space-6); /* 900px */
   gap: var(--space-1);
 }
 
 .parent:nth-child(3) .child {
-  flex-basis: var(--space-5);
+  flex-basis: var(--space-5); /* 300px */
 }
 
 .parent:nth-child(3) .child:nth-child(2n) {
@@ -55,7 +55,7 @@ Use cases: Shrink items or not shrink certain items when viewport is smaller. Yo
 /* You can align individual items along the cross axis using align-self. For all items we use align-items */
 .parent:nth-child(4) {
   display: flex;
-  height: var(--space-4);
+  height: var(--space-4); /* 200px */
   gap: var(--space-1);
 }
 
@@ -114,4 +114,18 @@ Use case: Desktop follows one ordering but changes in mobile version (rearrange 
   order: 1;
 } */
 
+.parent:nth-child(6) {
+  display: flex;
+  gap: var(--space-1);
+}
+
+/* flex-basis – Controls the default size of an item */
+/* By default all flex-items have a flex-shrink of 1 and flex-grow of 0 */
+/* Quiz: what happens if I add flex-shrink:0 ? */
+.parent:nth-child(6) .child {
+  flex-basis: var(--space-5); /* 300px */
+}
+
 /* RRC: ContractItem replica with flex instead of grid */
+
+/* Tutorial: https://flexboxfroggy.com/ */
