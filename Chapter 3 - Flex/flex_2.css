@@ -1,9 +1,16 @@
-/*
-- flex (shorthand) – Combines flex-grow, flex-shrink, and flex-basis.
-*/
+.parent:nth-of-type(1),
+.parent:nth-of-type(2),
+.parent:nth-of-type(3),
+.parent:nth-of-type(4),
+.parent:nth-of-type(5),
+.parent:nth-of-type(6),
+.parent:nth-of-type(7) {
+  display: flex;
+  gap: var(--space-1);
+}
 
 /* align-content – Controls alignment when there are multiple rows/columns. */
-.parent:nth-child(1) {
+.parent:nth-of-type(1) {
   display: flex;
   gap: var(--space-1); /* 16px */
   flex-wrap: wrap;
@@ -14,16 +21,11 @@
 
 /* flex-grow – how much extra space a flex item takes relative to other flex items inside a flex container. 
 Use cases: expand items or not expand certain items when viewport is bigger*/
-.parent:nth-child(2) {
-  display: flex;
-  gap: var(--space-1);
-}
-
-.parent:nth-child(2) .child:nth-child(2n) {
+.parent:nth-of-type(2) .child:nth-child(2n) {
   flex-grow: 2;
 }
 
-.parent:nth-child(2) .child:nth-child(2n - 1) {
+.parent:nth-of-type(2) .child:nth-child(2n - 1) {
   flex-grow: 1;
 }
 
@@ -33,37 +35,33 @@ there is no extra space then flex-basis will not apply  */
 
 /* flex-shrink – Defines how items shrink when space is limited (container has a width and items has flex-basis) 
 Use cases: Shrink items or not shrink certain items when viewport is smaller. You do not want a button to shrink so much that the text starts overflowing */
-.parent:nth-child(3) {
-  display: flex;
+.parent:nth-of-type(3) {
   width: var(--space-6); /* 900px */
-  gap: var(--space-1);
 }
 
-.parent:nth-child(3) .child {
+.parent:nth-of-type(3) .child {
   flex-basis: var(--space-5); /* 300px */
 }
 
-.parent:nth-child(3) .child:nth-child(2n) {
+.parent:nth-of-type(3) .child:nth-child(2n) {
   flex-shrink: 3;
   /* flex-shrink: 0; */ /* Demo this */
 }
 
-.parent:nth-child(3) .child:nth-child(2n - 1) {
+.parent:nth-of-type(3) .child:nth-child(2n - 1) {
   flex-shrink: 1;
 }
 
 /* You can align individual items along the cross axis using align-self. For all items we use align-items */
-.parent:nth-child(4) {
-  display: flex;
+.parent:nth-of-type(4) {
   height: var(--space-4); /* 200px */
-  gap: var(--space-1);
 }
 
-.parent:nth-child(4) .child:nth-child(2n) {
+.parent:nth-of-type(4) .child:nth-child(2n) {
   align-self: flex-end;
 }
 
-.parent:nth-child(4) .child:nth-child(2n-1) {
+.parent:nth-of-type(4) .child:nth-child(2n-1) {
   align-self: flex-start;
 }
 
@@ -71,59 +69,54 @@ Use cases: Shrink items or not shrink certain items when viewport is smaller. Yo
 Not ordering the html, just ordering the visual.
 Order is 0 be default for all
 Use case: Desktop follows one ordering but changes in mobile version (rearrange items in different layout/screen size) */
-.parent:nth-child(5) {
-  display: flex;
-  gap: var(--space-1);
-}
-
-.parent:nth-child(5) .child:nth-child(1) {
+.parent:nth-of-type(5) .child:nth-child(1) {
   order: 3;
 }
 
-.parent:nth-child(5) .child:nth-child(2) {
+.parent:nth-of-type(5) .child:nth-child(2) {
   order: 4;
 }
 
-.parent:nth-child(5) .child:nth-child(3) {
+.parent:nth-of-type(5) .child:nth-child(3) {
   order: 1; /*Quiz: What happens if it is changed to order:3? How will the ordering work? */
 }
 /* Quiz: What happens if order:1 is changed to -1 and others are commented out (Explain with a real use case - shift only a sidebar to left in mobile) */
 
-.parent:nth-child(5) .child:nth-child(4) {
+.parent:nth-of-type(5) .child:nth-child(4) {
   order: 2;
 }
 
 /*Comment out this*/
-/* .parent:nth-child(4) .child:nth-child(1) {
+/* .parent:nth-of-type(4) .child:nth-child(1) {
   order: 2;
 }
 
-.parent:nth-child(4) .child:nth-child(2) {
+.parent:nth-of-type(4) .child:nth-child(2) {
   order: 5;
 }
 
-.parent:nth-child(4) .child:nth-child(3) {
+.parent:nth-of-type(4) .child:nth-child(3) {
   order: 4;
 }
 
-.parent:nth-child(4) .child:nth-child(4) {
+.parent:nth-of-type(4) .child:nth-child(4) {
   order: 3;
 }
 
-.parent:nth-child(4) .child:nth-child(5) {
+.parent:nth-of-type(4) .child:nth-child(5) {
   order: 1;
 } */
-
-.parent:nth-child(6) {
-  display: flex;
-  gap: var(--space-1);
-}
 
 /* flex-basis – Controls the default size of an item */
 /* By default all flex-items have a flex-shrink of 1 and flex-grow of 0 */
 /* Quiz: what happens if I add flex-shrink:0 ? */
-.parent:nth-child(6) .child {
+.parent:nth-of-type(6) .child {
   flex-basis: var(--space-5); /* 300px */
+}
+
+/* flex is a shorthand of flex-grow, flex-shrink and flex-basis */
+.parent:nth-of-type(7) .child {
+  flex: 0 1 var(--space-4); /* 200px */
 }
 
 /* RRC: ContractItem replica with flex instead of grid */
