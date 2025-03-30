@@ -28,6 +28,9 @@
   --space-1: 1rem;
   --space-2: 2rem;
   --space-3: 20rem;
+  --space-4: 12.5rem; /* 200px */
+  --space-5: 18.75rem; /* 300px */
+  --space-6: 56.25rem; /* 900px */
 }
 
 /*---------------- Start - Helper classes ----------------*/
