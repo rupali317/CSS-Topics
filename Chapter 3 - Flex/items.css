@@ -3,6 +3,7 @@
   --color-1: hsl(43, 93%, 56%);
   --color-2: hsl(42, 11%, 52%);
   --color-3: hsl(60, 6%, 6%);
+  --color-4: hsl(0, 0%, 100%);
 
   /* Font family */
   --font-family-group-1: Cambria, Cochin, Georgia, Times, "Times New Roman",
@@ -43,6 +44,7 @@
   justify-content: space-between;
   padding: var(--space-none) var(--space-2);
   font-weight: var(--font-bold);
+  gap: var(--space-3);
 }
 
 .header p:first-child {
@@ -59,6 +61,7 @@
   border: var(--border-width-1) solid var(--color-3);
   border-radius: var(--border-radius-1);
   padding: var(--space-2);
+  gap: var(--space-3);
 }
 
 .icon {
@@ -73,7 +76,7 @@
   justify-content: center;
   content: "$";
   font-size: var(--font-size-1);
-  color: white;
+  color: var(--color-4);
 }
 
 .title {
