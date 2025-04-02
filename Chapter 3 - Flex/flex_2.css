@@ -31,7 +31,7 @@ Use cases: expand items or not expand certain items when viewport is bigger*/
 
 /* How browsers allocate space? Checks the content size if there is no flex-basis defined. 
 Flex-grow takes the remaining space and allocates according to the flex-grow values. If
-there is no extra space then flex-basis will not apply  */
+there is no extra space then flex-grow will not apply  */
 
 /* flex-shrink – Defines how items shrink when space is limited (container has a width and items has flex-basis) 
 Use cases: Shrink items or not shrink certain items when viewport is smaller. You do not want a button to shrink so much that the text starts overflowing */
