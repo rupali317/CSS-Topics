@@ -1,0 +1,29 @@
+:root {
+  --color-1: gray;
+
+  --border-width-1: 0.125rem;
+}
+
+section:not(:last-child) {
+  border-bottom: var(--border-width-1) solid var(--color-1);
+}
+
+.position-relative-1 {
+  position: relative;
+  left: 20px;
+  top: 30px;
+}
+
+.position-relative-2 {
+  position: relative;
+  bottom: 20px;
+  right: 20px;
+}
+
+.position-relative-3 {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  bottom: 30px;
+  right: 40px;
+}
