@@ -1,11 +1,14 @@
 :root {
+  /* Colors*/
   --color-1: gray;
   --color-2: white;
   --color-3: black;
   --color-4: red;
   --color-5: blue;
   --color-6: yellow;
+  --color-7: green;
 
+  /* Border width */
   --border-width-1: 0.125rem;
 }
 
@@ -14,13 +17,13 @@ section:not(:last-child) {
   border-bottom: var(--border-width-1) solid var(--color-1);
 }
 
-.position {
-  position: relative;
+.position-helper {
+  position: relative; /* RRC: what happens when you change it?*/
 }
 /*----------------- End - Helper classes -----------------*/
 
 /*----------------- 1. Position - static -----------------*/
-/* RRC: Insert definition */
+/* All elements have static by default. Positioned according to normal flow */
 .position-static {
   position: static;
   top: 20px;
@@ -28,7 +31,7 @@ section:not(:last-child) {
 /*--------------------------------------------------------*/
 
 /*---------------- 2. Position - relative ----------------*/
-/* RRC: Insert definition */
+/* Elements are positioned relative to itself in the normal position */
 .position-relative-1 {
   position: relative;
   left: 20px;
@@ -52,8 +55,9 @@ section:not(:last-child) {
 /*--------------------------------------------------------*/
 
 /*----------------- 3. Position - fixed ------------------*/
-/* RRC: Insert definition */
+/* Elements are positioned relative to the viewport */
 /* Quiz: What is a viewport? */
+/* Explain why the width is auto */
 .header,
 .footer {
   position: fixed;
@@ -67,27 +71,35 @@ section:not(:last-child) {
 
 .footer {
   bottom: 0px;
-  /* top: 10px; */ /* Comment it out */
+  /* top: 10px; */ /* Comment it out and explain why the stretch takes place */
 }
 /*--------------------------------------------------------*/
 
 /*--------------- 4. Position - absolute -----------------*/
-/* RRC: Insert definition */
+/* Elements are positioned based on the positioned ancestor */
 .position-absolute-1 {
   position: absolute;
   top: 10px;
+  /* bottom: 10px;  */ /* Quiz: what happens if I comment it out? */
   background-color: var(--color-6);
 }
 
 .position-absolute-2 {
   position: absolute;
   top: 10px;
+  /* bottom: 10px; RRC */
   background-color: var(--color-1);
 }
 /*--------------------------------------------------------*/
 
 /*--------------- 5. Position - sticky -------------------*/
 /* RRC: Insert definition */
+.position-sticky {
+  /* Todo: RRC */
+  position: sticky;
+  background-color: var(--color-7);
+  /* top: 0; */
+}
 /*--------------------------------------------------------*/
 
 /*---------------------- 6. z-index ----------------------*/
@@ -104,7 +116,7 @@ section:not(:last-child) {
 }
 
 .box-2 {
-  z-index: 1;
+  z-index: 1; /* Quiz: What if this is 2 what happens, will box-1 or box-2 appear at the top and why? */
   right: 10px;
   background-color: var(--color-5); /* blue */
 }
