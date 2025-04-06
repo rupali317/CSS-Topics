@@ -4,19 +4,31 @@
   --color-3: black;
   --color-4: red;
   --color-5: blue;
+  --color-6: yellow;
 
   --border-width-1: 0.125rem;
 }
 
+/*---------------- Start - Helper classes ----------------*/
 section:not(:last-child) {
   border-bottom: var(--border-width-1) solid var(--color-1);
 }
 
+.position {
+  position: relative;
+}
+/*----------------- End - Helper classes -----------------*/
+
+/*----------------- 1. Position - static -----------------*/
+/* RRC: Insert definition */
 .position-static {
   position: static;
   top: 20px;
 }
+/*--------------------------------------------------------*/
 
+/*---------------- 2. Position - relative ----------------*/
+/* RRC: Insert definition */
 .position-relative-1 {
   position: relative;
   left: 20px;
@@ -29,6 +41,7 @@ section:not(:last-child) {
   right: 20px;
 }
 
+/* relative to itself and not something else. Hence, for that left and top are enough */
 .position-relative-3 {
   position: relative;
   top: 10px;
@@ -36,11 +49,13 @@ section:not(:last-child) {
   bottom: 30px;
   right: 40px;
 }
+/*--------------------------------------------------------*/
 
+/*----------------- 3. Position - fixed ------------------*/
+/* RRC: Insert definition */
 /* Quiz: What is a viewport? */
 .header,
 .footer {
-  /* Comment out the html content in fixed section */
   position: fixed;
   background-color: var(--color-2);
   border: var(--border-width-1) solid var(--color-3);
@@ -54,7 +69,28 @@ section:not(:last-child) {
   bottom: 0px;
   /* top: 10px; */ /* Comment it out */
 }
+/*--------------------------------------------------------*/
 
+/*--------------- 4. Position - absolute -----------------*/
+/* RRC: Insert definition */
+.position-absolute-1 {
+  position: absolute;
+  top: 10px;
+  background-color: var(--color-6);
+}
+
+.position-absolute-2 {
+  position: absolute;
+  top: 10px;
+  background-color: var(--color-1);
+}
+/*--------------------------------------------------------*/
+
+/*--------------- 5. Position - sticky -------------------*/
+/* RRC: Insert definition */
+/*--------------------------------------------------------*/
+
+/*---------------------- 6. z-index ----------------------*/
 .box {
   color: var(--color-2);
   position: relative;
@@ -72,3 +108,4 @@ section:not(:last-child) {
   right: 10px;
   background-color: var(--color-5); /* blue */
 }
+/*--------------------------------------------------------*/
