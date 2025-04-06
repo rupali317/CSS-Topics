@@ -2,12 +2,19 @@
   --color-1: gray;
   --color-2: white;
   --color-3: black;
+  --color-4: red;
+  --color-5: blue;
 
   --border-width-1: 0.125rem;
 }
 
 section:not(:last-child) {
   border-bottom: var(--border-width-1) solid var(--color-1);
+}
+
+.position-static {
+  position: static;
+  top: 20px;
 }
 
 .position-relative-1 {
@@ -30,18 +37,38 @@ section:not(:last-child) {
   right: 40px;
 }
 
+/* Quiz: What is a viewport? */
 .header,
 .footer {
+  /* Comment out the html content in fixed section */
   position: fixed;
   background-color: var(--color-2);
   border: var(--border-width-1) solid var(--color-3);
 }
 
 .header {
-  top: 10px;
+  top: 0px;
 }
 
 .footer {
   bottom: 0px;
   /* top: 10px; */ /* Comment it out */
+}
+
+.box {
+  color: var(--color-2);
+  position: relative;
+}
+
+/* Quiz: z-index what is it? */
+.box-1 {
+  z-index: 2;
+  left: 10px;
+  background-color: var(--color-4); /* red */
+}
+
+.box-2 {
+  z-index: 1;
+  right: 10px;
+  background-color: var(--color-5); /* blue */
 }
