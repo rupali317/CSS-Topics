@@ -1,5 +1,7 @@
 :root {
   --color-1: gray;
+  --color-2: white;
+  --color-3: black;
 
   --border-width-1: 0.125rem;
 }
@@ -26,4 +28,20 @@ section:not(:last-child) {
   left: 20px;
   bottom: 30px;
   right: 40px;
+}
+
+.header,
+.footer {
+  position: fixed;
+  background-color: var(--color-2);
+  border: var(--border-width-1) solid var(--color-3);
+}
+
+.header {
+  top: 10px;
+}
+
+.footer {
+  bottom: 0px;
+  /* top: 10px; */ /* Comment it out */
 }
