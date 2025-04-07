@@ -18,7 +18,7 @@ section:not(:last-child) {
 }
 
 .position-helper {
-  position: relative; /* RRC: what happens when you change it?*/
+  position: relative;
 }
 
 /*----------------- End - Helper classes -----------------*/
