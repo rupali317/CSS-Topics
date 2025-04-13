@@ -21,7 +21,7 @@ section:not(:last-child) {
   position: relative;
 }
 
-/*----------------- End - Helper classes -----------------*/
+/*--------------------------------------------------------*/
 
 /*----------------- 1. Position - static -----------------*/
 /* All elements have static by default. Positioned according to normal flow, top/left/right/bottom and z-index are not applicable */
@@ -58,7 +58,8 @@ section:not(:last-child) {
 /*----------------- 3. Position - fixed ------------------*/
 /* Elements are positioned relative to the viewport. Elements taken away from normal flow */
 /* Quiz: What is a viewport? */
-/* Explain why the width is auto */
+/* Explain why the width is auto 
+fixed need exact coordinates*/
 .header,
 .footer {
   position: fixed;
@@ -88,7 +89,7 @@ section:not(:last-child) {
 .position-absolute-2 {
   position: absolute;
   top: 10px;
-  /* bottom: 10px; */ /* RRC Explain why it "disappears"*/
+  /* bottom: 10px; */ /* Explain why it "disappears" - relative doesnt have height */
   background-color: var(--color-1);
 }
 /*--------------------------------------------------------*/
