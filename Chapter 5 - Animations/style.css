@@ -1,0 +1,121 @@
+:root {
+  /* 1 . Colors */
+  --color-1: rgb(54, 134, 171);
+  --color-2: rgb(38, 82, 103);
+  --color-3: white;
+
+  /* 2. Space */
+  --space-1: 0rem;
+  --space-2: 1rem;
+
+  /* 3. Border radius */
+  --border-radius-1: 0.125rem;
+}
+
+button {
+  background-color: var(--color-1);
+  color: var(--color-3);
+  padding: var(--space-2);
+  border-radius: var(--border-radius-1);
+  border-width: var(--space-1);
+}
+
+button:hover {
+  background-color: var(--color-2);
+}
+
+/*
+CSS Transitions
+What Are Transitions
+
+Explain: "smooth change from one state to another"
+
+Real-life example: button hover effect
+
+Transition Properties
+
+transition-property
+
+transition-duration
+
+transition-timing-function
+
+transition-delay
+
+Hands-on Examples
+
+Hover to change background color
+
+Width/height animation
+
+Transform & opacity transitions
+
+Common Timing Functions
+
+ease, linear, ease-in, ease-out, cubic-bezier(...)
+
+Limitations
+
+Transitions require a trigger (e.g., hover/focus/class change)
+
+No keyframe control
+*/
+
+/*
+CSS Animations
+What Are Animations
+
+Keyframe-based sequence of styles
+
+@keyframes Rule
+
+Syntax: @keyframes slideIn { from {…} to {…} }
+
+Animation Properties
+
+animation-name
+
+animation-duration
+
+animation-timing-function
+
+animation-delay
+
+animation-iteration-count
+
+animation-direction
+
+animation-fill-mode
+
+animation-play-state
+
+Hands-on Examples
+
+Fade-in animation
+
+Slide/scale bounce effect
+
+Looping infinite loader animation
+*/
+
+/*
+Advanced Tips
+Combining Transitions + Transforms
+
+Rotate, scale, move, skew
+
+Use transform for better performance than animating top, left, etc.
+
+Animation Performance Best Practices
+
+Use will-change, transform, opacity for GPU acceleration
+
+Use Cases
+
+Microinteractions (buttons, toggles)
+
+Page transitions
+
+Loaders/spinners
+
+Modal entrance/exit*/
