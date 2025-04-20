@@ -3,50 +3,67 @@
   --color-1: rgb(54, 134, 171);
   --color-2: rgb(38, 82, 103);
   --color-3: white;
+  --color-4: rgb(52, 141, 89);
+  --color-5: rgb(38, 103, 65);
+  --color-6: rgb(210, 208, 45);
 
   /* 2. Space */
   --space-1: 0rem;
   --space-2: 1rem;
+  --space-3: 7rem;
+  --space-4: 9rem;
 
   /* 3. Border radius */
   --border-radius-1: 0.125rem;
+
+  /* 4. Font weights */
+  --font-bold: 700;
 }
 
 button {
-  background-color: var(--color-1);
-  color: var(--color-3);
   padding: var(--space-2);
   border-radius: var(--border-radius-1);
   border-width: var(--space-1);
 }
 
-button:hover {
+/* property duration transition-timing-function delay; */
+.button-1 {
+  background-color: var(--color-1);
+  color: var(--color-3);
+  transition: background-color 1s linear 0.5s; /* shorthand representation */
+  /* transition-property: background-color;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  transition-delay: 0.5s */
+}
+
+.button-1:hover {
   background-color: var(--color-2);
+  cursor: pointer;
+}
+
+/* visible and hidden - not all fall under the definition of smooth change */
+.button-2 {
+  background-color: var(--color-4);
+  color: var(--color-3);
+  width: var(--space-3);
+  /* visibility: visible; */
+  transition: background-color 2s ease-in, color 2s ease-out, width 1s 1s;
+  /* transition: background-color 2s ease-in, color 2s ease-out, width 1s 1s,
+    visibility 2s ease; */
+}
+
+.button-2:hover {
+  background-color: var(--color-5);
+  color: var(--color-6);
+  /* visibility: hidden; */
+  cursor: pointer;
+  width: var(--space-4);
 }
 
 /*
 CSS Transitions
 What Are Transitions
-
-Explain: "smooth change from one state to another"
-
-Real-life example: button hover effect
-
-Transition Properties
-
-transition-property
-
-transition-duration
-
-transition-timing-function
-
-transition-delay
-
-Hands-on Examples
-
-Hover to change background color
-
-Width/height animation
 
 Transform & opacity transitions
 
