@@ -6,6 +6,8 @@
   --color-4: rgb(52, 141, 89);
   --color-5: rgb(38, 103, 65);
   --color-6: rgb(210, 208, 45);
+  --color-7: rgb(129, 85, 185);
+  --color-8: rgb(153, 153, 151);
 
   /* 2. Space */
   --space-1: 0rem;
@@ -26,6 +28,10 @@ button {
   border-width: var(--space-1);
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 /* property duration transition-timing-function delay; */
 .button-1 {
   background-color: var(--color-1);
@@ -39,10 +45,10 @@ button {
 
 .button-1:hover {
   background-color: var(--color-2);
-  cursor: pointer;
 }
 
 /* visible and hidden - not all fall under the definition of smooth change */
+/* Common Timing Functions: ease, linear, ease-in, ease-out, cubic-bezier(...) */
 .button-2 {
   background-color: var(--color-4);
   color: var(--color-3);
@@ -57,26 +63,27 @@ button {
   background-color: var(--color-5);
   color: var(--color-6);
   /* visibility: hidden; */
-  cursor: pointer;
   width: var(--space-4);
 }
 
-/*
-CSS Transitions
+.button-3 {
+  background-color: var(--color-7);
+  color: var(--color-3);
+}
+
+.disabled {
+  color: var(--color-3);
+  background-color: var(--color-8);
+}
+
+/* CSS Transitions
 What Are Transitions
 
-Transform & opacity transitions
+transition-behaviour
 
-Common Timing Functions
+Transform & opacity transitions */
 
-ease, linear, ease-in, ease-out, cubic-bezier(...)
-
-Limitations
-
-Transitions require a trigger (e.g., hover/focus/class change)
-
-No keyframe control
-*/
+/* Limitations: Transitions require a trigger (e.g., hover/focus/class change), No keyframe control */
 
 /*
 CSS Animations
