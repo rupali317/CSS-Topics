@@ -54,7 +54,8 @@ button:hover {
   color: var(--color-3);
   width: var(--space-3);
   /* visibility: visible; */
-  transition: background-color 2s ease-in, color 2s ease-out, width 1s 1s;
+  transition: background-color 2s ease-in, color 2s ease-out, width 1s 1s,
+    transform 1s, opacity 1s 1s;
   /* transition: background-color 2s ease-in, color 2s ease-out, width 1s 1s,
     visibility 2s ease; */
 }
@@ -62,8 +63,10 @@ button:hover {
 .button-2:hover {
   background-color: var(--color-5);
   color: var(--color-6);
+  transform: scale(1.5);
   /* visibility: hidden; */
   width: var(--space-4);
+  opacity: 0.5;
 }
 
 .button-3 {
@@ -75,14 +78,6 @@ button:hover {
   color: var(--color-3);
   background-color: var(--color-8);
 }
-
-/* CSS Transitions
-What Are Transitions
-
-transition-behaviour
-
-Transform & opacity transitions */
-
 /* Limitations: Transitions require a trigger (e.g., hover/focus/class change), No keyframe control */
 
 /*
