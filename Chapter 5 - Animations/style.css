@@ -80,15 +80,48 @@ button:hover {
 }
 /* Limitations: Transitions require a trigger (e.g., hover/focus/class change), No keyframe control */
 
+.animation-1 {
+  animation: jerk-horizontal 1s ease-in infinite;
+}
+
+@keyframes jerk-horizontal {
+  from {
+    transform: translateX(20px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+
+.animation-2 {
+  animation: jerk-vertical 5s ease-in infinite;
+}
+
+@keyframes jerk-vertical {
+  0% {
+    color: var(--color-2);
+  }
+
+  50% {
+    color: var(--color-7);
+  }
+
+  75% {
+    color: var(--color-4);
+  }
+
+  100% {
+    color: var(--color-8);
+  }
+}
+
 /*
-CSS Animations
+CSS Animations: 
+
 What Are Animations
 
 Keyframe-based sequence of styles
-
-@keyframes Rule
-
-Syntax: @keyframes slideIn { from {…} to {…} }
 
 Animation Properties
 
