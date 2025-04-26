@@ -81,7 +81,11 @@ button:hover {
 /* Limitations: Transitions require a trigger (e.g., hover/focus/class change), No keyframe control */
 
 .animation-1 {
-  animation: jerk-horizontal 1s ease-in infinite;
+  animation: jerk-horizontal 1s ease-in infinite; /* shorthand representation */
+  /* animation-name: jerk-horizontal;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  animation-duration: 1s; */
 }
 
 @keyframes jerk-horizontal {
@@ -125,15 +129,7 @@ Keyframe-based sequence of styles
 
 Animation Properties
 
-animation-name
-
-animation-duration
-
-animation-timing-function
-
 animation-delay
-
-animation-iteration-count
 
 animation-direction
 
