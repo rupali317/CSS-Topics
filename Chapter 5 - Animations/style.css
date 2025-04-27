@@ -86,6 +86,9 @@ button:hover {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in;
   animation-duration: 1s; */
+  /* Quiz: what would happen if this appears before the animation? */
+  /* animation-delay: 3s; */
+  /* animation-direction: normal; */ /* normal, reverse, alternate, alternate-reverse */
 }
 
 @keyframes jerk-horizontal {
@@ -99,7 +102,7 @@ button:hover {
 }
 
 .animation-2 {
-  animation: jerk-vertical 5s ease-in infinite;
+  animation: jerk-vertical 5s ease-in 5;
 }
 
 @keyframes jerk-vertical {
@@ -120,30 +123,32 @@ button:hover {
   }
 }
 
+.animation-3 {
+  width: var(--space-2);
+  height: var(--space-2);
+  background-color: var(--color-7);
+  animation: pulsate 0.75s ease-in-out infinite alternate;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+}
+
 /*
-CSS Animations: 
-
-What Are Animations
-
-Keyframe-based sequence of styles
-
-Animation Properties
-
-animation-delay
-
-animation-direction
-
 animation-fill-mode
 
 animation-play-state
 
-Hands-on Examples
-
 Fade-in animation
 
 Slide/scale bounce effect
-
-Looping infinite loader animation
 */
 
 /*
