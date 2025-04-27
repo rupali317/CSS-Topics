@@ -15,12 +15,38 @@
   --space-2: 1rem;
   --space-3: 7rem;
   --space-4: 9rem;
+  --space-5: 0.5rem;
 
   /* 3. Border radius */
   --border-radius-1: 0.125rem;
 
   /* 4. Font weights */
   --font-bold: 700;
+}
+
+nav {
+  color: var(--color-3);
+  background-color: var(--color-2);
+  padding: var(--space-2);
+  transform: translate(-100%);
+  transition: transform 2s linear;
+}
+
+nav.menu-open {
+  transform: translate(0px);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  list-style-type: none;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
 }
 
 button {
@@ -41,7 +67,7 @@ button:hover {
   /* transition-property: background-color;
   transition-duration: 1s;
   transition-timing-function: linear;
-  transition-delay: 0.5s */
+  transition-delay: 0.5s; */
 }
 
 .button-1:hover {
@@ -50,15 +76,17 @@ button:hover {
 
 /* visible and hidden - not all fall under the definition of smooth change */
 /* Common Timing Functions: ease, linear, ease-in, ease-out, cubic-bezier(...) */
+/* Warnings against using all */
+/* animating on width, height, top, left, are not great for performance */
 .button-2 {
   background-color: var(--color-4);
   color: var(--color-3);
   width: var(--space-3);
   /* visibility: visible; */
-  transition: background-color 2s ease-in, color 2s ease-out, width 1s 1s,
-    transform 1s, opacity 1s 1s;
   /* transition: background-color 2s ease-in, color 2s ease-out, width 1s 1s,
-    visibility 2s ease; */
+    transform 1s, opacity 1s 1s; */
+  transition: background-color 2s ease-in, color 2s ease-out, width 1s 1s,
+    visibility 2s ease;
 }
 
 .button-2:hover {
@@ -153,23 +181,11 @@ button:hover {
 }
 
 /*
-Advanced Tips
-Combining Transitions + Transforms
 
-Rotate, scale, move, skew
-
-Use transform for better performance than animating top, left, etc.
-
-Animation Performance Best Practices
-
-Use will-change, transform, opacity for GPU acceleration
+Animation Performance Best Practices:
+- Use will-change, transform, opacity for GPU acceleration
 
 Use Cases
-
-Microinteractions (buttons, toggles)
-
-Page transitions
-
-Loaders/spinners
-
-Modal entrance/exit*/
+- Page transitions
+- Modal entrance/exit
+*/
