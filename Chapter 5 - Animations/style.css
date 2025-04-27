@@ -8,6 +8,7 @@
   --color-6: rgb(210, 208, 45);
   --color-7: rgb(129, 85, 185);
   --color-8: rgb(153, 153, 151);
+  --color-9: rgb(188, 92, 92);
 
   /* 2. Space */
   --space-1: 0rem;
@@ -102,24 +103,30 @@ button:hover {
 }
 
 .animation-2 {
-  animation: jerk-vertical 5s ease-in 5;
+  animation: jerk-vertical 5s 2s ease-in 2;
+  /* animation-fill-mode: both; */
+  /* Explain the values: 
+  - forwards (keep style at 100% frame after naimation ends), 
+  - backwards (keeps style at 0% frame even before animation starts), 
+  - none (default), 
+  - both (forwards+backwards) */
 }
 
 @keyframes jerk-vertical {
   0% {
-    color: var(--color-2);
+    color: var(--color-2); /* green */
   }
 
   50% {
-    color: var(--color-7);
+    color: var(--color-7); /* purple */
   }
 
   75% {
-    color: var(--color-4);
+    color: var(--color-9); /* red */
   }
 
   100% {
-    color: var(--color-8);
+    color: var(--color-8); /* gray */
   }
 }
 
@@ -141,15 +148,9 @@ button:hover {
   }
 }
 
-/*
-animation-fill-mode
-
-animation-play-state
-
-Fade-in animation
-
-Slide/scale bounce effect
-*/
+.animation-3:hover {
+  animation-play-state: paused;
+}
 
 /*
 Advanced Tips
