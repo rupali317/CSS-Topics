@@ -74,9 +74,10 @@ button:hover {
   background-color: var(--color-2);
 }
 
-/* visible and hidden - not all fall under the definition of smooth change */
+/* visible and hidden - not all fall under the definition of smooth change. opacity can be used as a potential alternative */
 /* Common Timing Functions: ease, linear, ease-in, ease-out, cubic-bezier(...) */
 /* Warnings against using all */
+/* Use will-change, transform, opacity for GPU acceleration - RRC */
 /* animating on width, height, top, left, are not great for performance */
 .button-2 {
   background-color: var(--color-4);
@@ -179,13 +180,3 @@ button:hover {
 .animation-3:hover {
   animation-play-state: paused;
 }
-
-/*
-
-Animation Performance Best Practices:
-- Use will-change, transform, opacity for GPU acceleration
-
-Use Cases
-- Page transitions
-- Modal entrance/exit
-*/
