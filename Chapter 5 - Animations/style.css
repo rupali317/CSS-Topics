@@ -24,25 +24,7 @@
   --font-bold: 700;
 }
 
-nav {
-  color: var(--color-3);
-  background-color: var(--color-2);
-  padding: var(--space-2);
-  transform: translate(-100%);
-  transition: transform 2s linear;
-}
-
-nav.menu-open {
-  transform: translate(0px);
-}
-
-nav ul {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-  list-style-type: none;
-}
-
+/*------------ Start: Helper functions ------------*/
 body {
   display: flex;
   height: 100vh;
@@ -58,6 +40,7 @@ button {
 button:hover {
   cursor: pointer;
 }
+/*------------- End: Helper functions -------------*/
 
 /* property duration transition-timing-function delay; */
 .button-1 {
@@ -77,7 +60,6 @@ button:hover {
 /* visible and hidden - not all fall under the definition of smooth change. opacity can be used as a potential alternative */
 /* Common Timing Functions: ease, linear, ease-in, ease-out, cubic-bezier(...) */
 /* Warnings against using all */
-/* Use will-change, transform, opacity for GPU acceleration - RRC */
 /* animating on width, height, top, left, are not great for performance */
 .button-2 {
   background-color: var(--color-4);
@@ -119,6 +101,25 @@ button:hover {
   /* Quiz: what would happen if this appears before the animation? */
   /* animation-delay: 3s; */
   /* animation-direction: normal; */ /* normal, reverse, alternate, alternate-reverse */
+}
+
+nav {
+  color: var(--color-3);
+  background-color: var(--color-2);
+  padding: var(--space-2);
+  transform: translate(-100%);
+  transition: transform 2s linear;
+}
+
+nav.menu-open {
+  transform: translate(0px);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  list-style-type: none;
 }
 
 @keyframes jerk-horizontal {
