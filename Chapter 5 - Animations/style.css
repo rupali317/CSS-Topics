@@ -65,11 +65,10 @@ button:hover {
   background-color: var(--color-4);
   color: var(--color-3);
   width: var(--space-3);
-  /* visibility: visible; */
-  /* transition: background-color 2s ease-in, color 2s ease-out, width 1s 1s,
-    transform 1s, opacity 1s 1s; */
+  visibility: visible;
   transition: background-color 2s ease-in, color 2s ease-out, width 1s 1s,
-    visibility 2s ease;
+    transform 1s, opacity 1s 1s;
+  /* transition: visibility 5s; */
 }
 
 .button-2:hover {
@@ -84,30 +83,19 @@ button:hover {
 .button-3 {
   background-color: var(--color-7);
   color: var(--color-3);
+  transition: background-color 1s linear, color 1s linear;
 }
 
 .disabled {
   color: var(--color-3);
   background-color: var(--color-8);
 }
-/* Limitations: Transitions require a trigger (e.g., hover/focus/class change), No keyframe control */
-
-.animation-1 {
-  animation: jerk-horizontal 1s ease-in infinite; /* shorthand representation */
-  /* animation-name: jerk-horizontal;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in;
-  animation-duration: 1s; */
-  /* Quiz: what would happen if this appears before the animation? */
-  /* animation-delay: 3s; */
-  /* animation-direction: normal; */ /* normal, reverse, alternate, alternate-reverse */
-}
 
 nav {
   color: var(--color-3);
   background-color: var(--color-2);
   padding: var(--space-2);
-  transform: translate(-100%);
+  transform: translate(-100%); /* Moves it left by 100% of its own width */
   transition: transform 2s linear;
 }
 
@@ -121,6 +109,17 @@ nav ul {
   gap: var(--space-5);
   list-style-type: none;
 }
+/* Limitations: Transitions require a trigger (e.g., hover/focus/class change), No keyframe control */
+
+.animation-1 {
+  animation: jerk-horizontal 1s ease-in infinite; /* shorthand representation */
+  /* animation-name: jerk-horizontal;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  animation-duration: 1s; */
+  /* animation-delay: 3s; */
+  /* animation-direction: normal; */ /* normal (start → end ), reverse (end → start), alternate (start → end, then end → start, repeat), alternate-reverse (end → start, then start → end, repeat) */
+}
 
 @keyframes jerk-horizontal {
   from {
@@ -133,16 +132,16 @@ nav ul {
 }
 
 .animation-2 {
-  animation: jerk-vertical 5s 2s ease-in 2;
-  /* animation-fill-mode: both; */
+  animation: change-color 5s 2s ease-in 2;
+  /* animation-fill-mode: forwards; */
   /* Explain the values: 
-  - forwards (keep style at 100% frame after naimation ends), 
+  - forwards (keep style at 100% frame after animation ends), 
   - backwards (keeps style at 0% frame even before animation starts), 
   - none (default), 
   - both (forwards+backwards) */
 }
 
-@keyframes jerk-vertical {
+@keyframes change-color {
   0% {
     color: var(--color-2); /* green */
   }
@@ -179,5 +178,5 @@ nav ul {
 }
 
 .animation-3:hover {
-  animation-play-state: paused;
+  animation-play-state: paused; /* whether animation is playing or paused. One use case: modal opens up pause any animation so that focus is on the modal instead of being distracted */
 }
